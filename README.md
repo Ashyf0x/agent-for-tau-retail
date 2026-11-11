@@ -58,11 +58,3 @@ Set-Location .\agent-runtime
 ```
 
 默认入口是脚本模型离线示例。真实模型、用户模拟器和裁判调用需要另获当次授权。
-
-## 证据与清理边界
-
-2026-11-10 按用户决定删除了早期探索实验、旧日志与 `.archive/` 归档区，**不另做归档**；这些目录在 Git 中均未跟踪，删除后无法用 Git 恢复。保留的 50×3 结果位于 `agent-runtime/experiments/retail-qwen-tier-order-20261108/runs/t50x3/`，实验前后逐目录核对完好。
-
-清理时同步解除了测试对已删实验目录的耦合：所需最小输入迁至 `agent-runtime/tests/fixtures/legacy/`，`evals/decision_snapshots.py::prepare()` 改为显式接收 `audit_path` / `runs_root`。运行核心行为、工具清单与模型请求字节均未改变，详见 `experiments/README.md`。
-
-默认仍不覆盖或删除原始轨迹、实验数据、预算账本、冻结配置与源码快照；本次清理是用户明确授权的例外。
