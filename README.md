@@ -2,8 +2,6 @@
 
 当前开发项目是 **agent-runtime**：轻量单 Agent 运行核心，以「程序管状态与执行、模型只管语言与工具选择」为边界，接入固定版本 τ²-Bench Retail 官方评测链路。50 任务 × 3 trial 的全量评测已完成并收尾；工作区根目录只保留长期规范与导航，历史交接和探索批次已清理。
 
-> 项目原名 `research-agent` / `research_agent`，已全量改名为 `agent-runtime` / `agentcore`；旧名仅保留在冻结的实验快照、日志与测试输入中，映射见 [experiments/README.md](agent-runtime/experiments/README.md)。
-
 ## 目录导航
 
 ```text
