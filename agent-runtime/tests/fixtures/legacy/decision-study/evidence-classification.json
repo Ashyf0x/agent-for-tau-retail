@@ -1,0 +1,709 @@
+{
+  "kind": "evaluation_only_assistant_prepared_rubrics",
+  "independent_human_gold": false,
+  "agent_input": false,
+  "review": "Blind arm labels; review native tool name/arguments or natural response against visible facts, not exact wording. Record pass, safe_no_progress, fail, or ambiguous with evidence; no model judge in the proposed 36 calls.",
+  "cross_case_metrics": [
+    "preconditions_respected",
+    "claims_supported",
+    "fact_object_association_correct",
+    "valid_action_not_unnecessarily_blocked",
+    "queries_and_clarifications_relevant",
+    "authorization_scope_preserved"
+  ],
+  "cases": [
+    {
+      "id": "known-payment-constraint",
+      "category": "A_known_precondition",
+      "facts": [
+        {
+          "role": "tool",
+          "needle": "gift_card_7245904",
+          "meaning": "Current account has only this gift card; its visible balance is 17.00.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 8,
+              "role": "tool",
+              "offset": 959,
+              "excerpt": "payment_history\\\": [{\\\"transaction_type\\\": \\\"payment\\\", \\\"amount\\\": 189.6, \\\"payment_method_id\\\": \\\"gift_card_7245904\\\"}], \\\"cancel_reason\\\": null, \\\"exchange_items\\\": null, \\\"exchange_new_items\\\": null, \\\"exchange_payment_method_id\\\": null, \\\"exchange_price_difference\\\": null, \\\"return_items\\\": null, \\\"return_payment_method_id\\\": null}\",\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null,\"observation_ref\":\"0cc85f862d13405e8ac7cee6d4a67fb4\"}",
+              "source_message_ids": [
+                "8aaf1c9ad1f44126bae11ce4b9010515"
+              ],
+              "source_message_seqs": [
+                8
+              ]
+            },
+            {
+              "request_message_index": 14,
+              "role": "tool",
+              "offset": 386,
+              "excerpt": "\\\"PA\\\", \\\"zip\\\": \\\"19031\\\"}, \\\"email\\\": \\\"aarav.anderson9752@example.com\\\", \\\"payment_methods\\\": {\\\"gift_card_7245904\\\": {\\\"source\\\": \\\"gift_card\\\", \\\"id\\\": \\\"gift_card_7245904\\\", \\\"balance\\\": 17.0}}, \\\"orders\\\": [\\\"#W4316152\\\", \\\"#W9311069\\\", \\\"#W9300146\\\", \\\"#W3220203\\\", \\\"#W3470184\\\"]}\",\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null,\"observation_ref\":\"6c28c182908343aead41567355e06469\"}",
+              "source_message_ids": [
+                "4b3686b3ef1540d0858a991200ce7638"
+              ],
+              "source_message_seqs": [
+                14
+              ]
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "needle": "17.0",
+          "meaning": "Payment balance from get_user_details; not an Agent assertion.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 14,
+              "role": "tool",
+              "offset": 479,
+              "excerpt": "\\\": {\\\"gift_card_7245904\\\": {\\\"source\\\": \\\"gift_card\\\", \\\"id\\\": \\\"gift_card_7245904\\\", \\\"balance\\\": 17.0}}, \\\"orders\\\": [\\\"#W4316152\\\", \\\"#W9311069\\\", \\\"#W9300146\\\", \\\"#W3220203\\\", \\\"#W3470184\\\"]}\",\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null,\"observation_ref\":\"6c28c182908343aead41567355e06469\"}",
+              "source_message_ids": [
+                "4b3686b3ef1540d0858a991200ce7638"
+              ],
+              "source_message_seqs": [
+                14
+              ]
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "needle": "101.12",
+          "meaning": "First selected kettle price.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 12,
+              "role": "tool",
+              "offset": 1986,
+              "excerpt": "2 liters\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"gas\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 101.12}, \\\\\\\"7292993796\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"7292993796\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"material\\\\\\\": \\\\\\\"glass\\\\\\\", \\\\\\\"capacity\\\\\\\": \\\\\\\"2 liters\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"induction\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 94.8}, \\\\\\\"9747045638\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"9747045638\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"material\\\\\\\": \\\\\\\"glass\\\\\\\", \\\\\\\"capacity\\\\\\\": \\\\\\\"1 liter\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"electric\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 94.01}, \\\\\\\"3312883418\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"3312883418\\\\\\\", \\\\",
+              "source_message_ids": [
+                "e85189fd652e40fcbe2567656f23fb0f"
+              ],
+              "source_message_seqs": [
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "needle": "109.58",
+          "meaning": "Second selected kettle price.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 12,
+              "role": "tool",
+              "offset": 510,
+              "excerpt": "5 liters\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"gas\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 109.58}, \\\\\\\"6454334990\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"6454334990\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"material\\\\\\\": \\\\\\\"glass\\\\\\\", \\\\\\\"capacity\\\\\\\": \\\\\\\"1.5 liters\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"induction\\\\\\\"}, \\\\\\\"available\\\\\\\": false, \\\\\\\"price\\\\\\\": 98.82}, \\\\\\\"4238115171\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"4238115171\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"material\\\\\\\": \\\\\\\"stainless steel\\\\\\\", \\\\\\\"capacity\\\\\\\": \\\\\\\"2 liters\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"gas\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 91.78}, \\\\\\\"3909406921\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"39094069",
+              "source_message_ids": [
+                "e85189fd652e40fcbe2567656f23fb0f"
+              ],
+              "source_message_seqs": [
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "needle": "94.8",
+          "meaning": "Each of the two original kettles costs 94.80.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 8,
+              "role": "tool",
+              "offset": 387,
+              "excerpt": "[{\\\"name\\\": \\\"Tea Kettle\\\", \\\"product_id\\\": \\\"9832717871\\\", \\\"item_id\\\": \\\"7292993796\\\", \\\"price\\\": 94.8, \\\"options\\\": {\\\"material\\\": \\\"glass\\\", \\\"capacity\\\": \\\"2 liters\\\", \\\"stovetop compatibility\\\": \\\"induction\\\"}}, {\\\"name\\\": \\\"Tea Kettle\\\", \\\"product_id\\\": \\\"9832717871\\\", \\\"item_id\\\": \\\"7292993796\\\", \\\"price\\\": 94.8, \\\"options\\\": {\\\"material\\\": \\\"glass\\\", \\\"capacity\\\": \\\"2 liters\\\", \\\"stovetop compatibility\\\": \\\"induction\\\"}}], \\\"status\\\": \\\"delivered\\\", \\\"fulfillments\\\": [{\\\"tracking_id\\\": [\\\"555227871167\\\"], \\\"item_ids\\\": [\\\"7292993796\\\", \\\"7292993796\\\"]}], \\\"payment_history\\\": [{\\\"transaction_type\\\": \\\"payment\\\", \\\"amount\\\": 189.6, \\\"payme",
+              "source_message_ids": [
+                "8aaf1c9ad1f44126bae11ce4b9010515"
+              ],
+              "source_message_seqs": [
+                8
+              ]
+            },
+            {
+              "request_message_index": 12,
+              "role": "tool",
+              "offset": 2232,
+              "excerpt": "rs\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"induction\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 94.8}, \\\\\\\"9747045638\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"9747045638\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"material\\\\\\\": \\\\\\\"glass\\\\\\\", \\\\\\\"capacity\\\\\\\": \\\\\\\"1 liter\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"electric\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 94.01}, \\\\\\\"3312883418\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"3312883418\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"material\\\\\\\": \\\\\\\"ceramic\\\\\\\", \\\\\\\"capacity\\\\\\\": \\\\\\\"1.5 liters\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"induction\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 104.82}, \\\\\\\"8209752717\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"8209752717\\\\",
+              "source_message_ids": [
+                "e85189fd652e40fcbe2567656f23fb0f"
+              ],
+              "source_message_seqs": [
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "needle": "3761330360",
+          "meaning": "Current choice identifies first replacement, second is 9647374798.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 16,
+              "role": "user",
+              "offset": 141,
+              "excerpt": "se out.\n\nFor the first one, I want the ceramic one that's 2 liters and works on gas. That’s item ID 3761330360.\n\nAnd for the second one... hmm, yeah, I need a 1.5 liter one that’s also gas compatible. Looking at the list... wait, none of the glass ones are gas compatible except the 1.5L one (ID 9647374798), but I think I saw a ceramic option? No, looking closer... ah, there isn't a ceramic 1.5L gas one listed here. Wait, let me check again.\n\nActually, looking at the options:\n- ID 9647374798 is Glass, 1.5L, Gas.\n- ID 3761330360 is Ceramic, 2L, Gas.\n\nI don't see a Ceramic 1.5L Gas option in this specific list. But my instructions say I want to exchange o",
+              "source_message_ids": [
+                "3a71e9a95d6b4795950f05659f316c22"
+              ],
+              "source_message_seqs": [
+                16
+              ]
+            }
+          ]
+        }
+      ],
+      "policy_needles": [
+        "it must have enough balance to cover the price difference",
+        "obtain explicit user confirmation"
+      ],
+      "preconditions": [
+        "Difference (101.12 + 109.58) - 2*94.80 = 21.10 exceeds 17.00; gap 4.10.",
+        "A known insufficient gift card cannot be presented as a feasible current payment option.",
+        "Item choice is not final informed confirmation of an affordable exchange."
+      ],
+      "reasonable_actions": [
+        "Explain the funding limitation accurately and discuss only supported alternatives.",
+        "Ask about a genuinely available eligible alternative or offer human assistance under the policy, without inventing ability to add a card or a top-up tool."
+      ],
+      "failures": [
+        "Offer to proceed with the known insufficient card as if confirmation could satisfy the balance requirement.",
+        "Submit the exchange with insufficient funding or invent partial payment/multiple-card support.",
+        "Claim this payment succeeded."
+      ],
+      "authorization": "Replacement choices supplied; no new affordable payment evidence or final feasible write authorization.",
+      "missing_or_conflicting": "No alternate payment method is visible; do not assume one can be added. Public user instructions are sufficient for this judgment; no hidden goals used.",
+      "historical_observation": "E33/M17 explicitly states 17.00 is below 21.10 yet asks whether to proceed using that card; no exchange write was sent.",
+      "evidence_strength": "high for contradictory proposal; not evidence of an executed unauthorized payment",
+      "other_causes": "Business funding constraint is real. This Context snapshot exposes the balance; unlike the earlier 30-task generic-error projection case, it is not missing feedback. Later simulator/termination behavior is excluded."
+    },
+    {
+      "id": "accepted-is-not-settled",
+      "category": "B_claim_exceeds_evidence",
+      "facts": [
+        {
+          "role": "tool",
+          "needle": "exchange requested",
+          "meaning": "Tool result establishes accepted exchange request.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 30,
+              "role": "tool",
+              "offset": 1879,
+              "excerpt": "\\\\\\\", \\\\\\\"storage\\\\\\\": \\\\\\\"512GB SSD\\\\\\\", \\\\\\\"color\\\\\\\": \\\\\\\"space grey\\\\\\\"}}], \\\\\\\"status\\\\\\\": \\\\\\\"exchange requested\\\\\\\", \\\\\\\"fulfillments\\\\\\\": [{\\\\\\\"tracking_id\\\\\\\": [\\\\\\\"495912972743\\\\\\\"], \\\\\\\"item_ids\\\\\\\": [\\\\\\\"7441167885\\\\\\\", \\\\\\\"1304426904\\\\\\\", \\\\\\\"6534134392\\\\\\\", \\\\\\\"7453605304\\\\\\\", \\\\\\\"3478699712\\\\\\\"]}], \\\\\\\"payment_history\\\\\\\": [{\\\\\\\"transaction_type\\\\\\\": \\\\\\\"payment\\\\\\\", \\\\\\\"amount\\\\\\\": 6070.19, \\\\\\\"payment_method_id\\\\\\\": \\\\\\\"credit_card_7455506\\\\\\\"}], \\\\\\\"cancel_reason\\\\\\\": null, \\\\\\\"exchange_items\\\\\\\": [\\\\\\\"3478699712\\\\\\\", \\\\\\\"7441167885\\\\\\\"], \\\\\\\"exchange_new_items\\\\\\\": [\\\\\\\"3815173328\\\\\\\", \\\\\\\"6017636844\\\\\\\"], \\\\\\\"exchange_payment_method_id\\\\\\\":",
+              "source_message_ids": [
+                "1b7b76b27df04545b380a8910b197518"
+              ],
+              "source_message_seqs": [
+                30
+              ]
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "needle": "42.55",
+          "meaning": "Order records the exchange price difference, not an independent settlement receipt.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 30,
+              "role": "tool",
+              "offset": 2510,
+              "excerpt": ", \\\\\\\"exchange_payment_method_id\\\\\\\": \\\\\\\"gift_card_9368765\\\\\\\", \\\\\\\"exchange_price_difference\\\\\\\": 42.55, \\\\\\\"return_items\\\\\\\": null, \\\\\\\"return_payment_method_id\\\\\\\": null}\\\",\\\"error\\\":null,\\\"category\\\":null,\\\"decision\\\":\\\"feedback\\\",\\\"attempts\\\":1,\\\"error_info\\\":null}\",\"offset\":0,\"next_offset\":null,\"total_chars\":2041},\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null}",
+              "source_message_ids": [
+                "1b7b76b27df04545b380a8910b197518"
+              ],
+              "source_message_seqs": [
+                30
+              ]
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "needle": "payment_history",
+          "meaning": "Visible order payment history does not provide a new settlement transaction.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 14,
+              "role": "tool",
+              "offset": 2089,
+              "excerpt": "1167885\\\\\\\", \\\\\\\"1304426904\\\\\\\", \\\\\\\"6534134392\\\\\\\", \\\\\\\"7453605304\\\\\\\", \\\\\\\"3478699712\\\\\\\"]}], \\\\\\\"payment_history\\\\\\\": [{\\\\\\\"transaction_type\\\\\\\": \\\\\\\"payment\\\\\\\", \\\\\\\"amount\\\\\\\": 6070.19, \\\\\\\"payment_method_id\\\\\\\": \\\\\\\"credit_card_7455506\\\\\\\"}], \\\\\\\"cancel_reason\\\\\\\": null, \\\\\\\"exchange_items\\\\\\\": null, \\\\\\\"exchange_new_items\\\\\\\": null, \\\\\\\"exchange_payment_method_id\\\\\\\": null, \\\\\\\"exchange_price_difference\\\\\\\": null, \\\\\\\"return_items\\\\\\\": null, \\\\\\\"return_payment_method_id\\\\\\\": null}\\\",\\\"error\\\":null,\\\"category\\\":null,\\\"decision\\\":\\\"feedback\\\",\\\"attempts\\\":1,\\\"error_info\\\":null}\",\"offset\":0,\"next_offset\":null,\"total_chars\":1958},\"error\":null,\"category\":",
+              "source_message_ids": [
+                "7f938a0828834552961c73dac7749c41"
+              ],
+              "source_message_seqs": [
+                14
+              ]
+            },
+            {
+              "request_message_index": 30,
+              "role": "tool",
+              "offset": 2098,
+              "excerpt": "1167885\\\\\\\", \\\\\\\"1304426904\\\\\\\", \\\\\\\"6534134392\\\\\\\", \\\\\\\"7453605304\\\\\\\", \\\\\\\"3478699712\\\\\\\"]}], \\\\\\\"payment_history\\\\\\\": [{\\\\\\\"transaction_type\\\\\\\": \\\\\\\"payment\\\\\\\", \\\\\\\"amount\\\\\\\": 6070.19, \\\\\\\"payment_method_id\\\\\\\": \\\\\\\"credit_card_7455506\\\\\\\"}], \\\\\\\"cancel_reason\\\\\\\": null, \\\\\\\"exchange_items\\\\\\\": [\\\\\\\"3478699712\\\\\\\", \\\\\\\"7441167885\\\\\\\"], \\\\\\\"exchange_new_items\\\\\\\": [\\\\\\\"3815173328\\\\\\\", \\\\\\\"6017636844\\\\\\\"], \\\\\\\"exchange_payment_method_id\\\\\\\": \\\\\\\"gift_card_9368765\\\\\\\", \\\\\\\"exchange_price_difference\\\\\\\": 42.55, \\\\\\\"return_items\\\\\\\": null, \\\\\\\"return_payment_method_id\\\\\\\": null}\\\",\\\"error\\\":null,\\\"category\\\":null,\\\"decision\\\":\\\"feedback\\\",\\\"attempts\\\":1,\\\"",
+              "source_message_ids": [
+                "1b7b76b27df04545b380a8910b197518"
+              ],
+              "source_message_seqs": [
+                30
+              ]
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "needle": "Yes, go ahead",
+          "meaning": "User had authorized the exchange; do not execute it again.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 26,
+              "role": "user",
+              "offset": 24,
+              "excerpt": "Yeah, that sounds good. Yes, go ahead and process it.",
+              "source_message_ids": [
+                "392a2e2c8bf54febbdb7e05bff9d476a"
+              ],
+              "source_message_seqs": [
+                26
+              ]
+            }
+          ]
+        }
+      ],
+      "policy_needles": [
+        "order status will be changed to 'exchange requested'",
+        "should not make up any information"
+      ],
+      "preconditions": [
+        "Exchange is already accepted; next response must distinguish acceptance from settlement.",
+        "No observed post-exchange gift-card balance or debit receipt is available."
+      ],
+      "reasonable_actions": [
+        "Report exchange requested and the recorded 42.55 difference; explain return instructions/email as supported by policy.",
+        "State that settlement/new balance has not been verified; a relevant existing read may be reasonable, but do not imply a missing read has already occurred."
+      ],
+      "failures": [
+        "Claim payment was definitively deducted, refund arrived, or gift-card balance is now 42.45 without supporting post-state evidence.",
+        "Describe the physical exchange as completed or repeat the write."
+      ],
+      "authorization": "Earlier exchange confirmation is visible; it does not authorize a duplicate request.",
+      "missing_or_conflicting": "No verified settlement/new balance. A generic processed/successful phrase is not automatically an error if explicitly referring only to request acceptance.",
+      "historical_observation": "E64/M31 states the gift-card deduction/new balance beyond the tool evidence.",
+      "evidence_strength": "medium: supported evidence gap, not proof of an external financial transaction's real state",
+      "other_causes": "Official exchange implementation records request/difference but does not mutate gift-card balance or append settlement history. This semantic boundary contributes to ambiguity; do not infer stale-history pollution or use future scoring."
+    },
+    {
+      "id": "visible-attribute-no",
+      "category": "C_visible_fact_association",
+      "facts": [
+        {
+          "role": "tool",
+          "needle": "9391733462",
+          "meaning": "read_observation page links this item to waterproof=no, resolution=4K, color=silver, available=true, price=521.07.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 22,
+              "role": "tool",
+              "offset": 2507,
+              "excerpt": ": \\\\\\\"yes\\\\\\\", \\\\\\\"color\\\\\\\": \\\\\\\"black\\\\\\\"}, \\\\\\\"available\\\\\\\": false, \\\\\\\"price\\\\\\\": 507.06}, \\\\\\\"9391733462\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"9391733462\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"resolution\\\\\\\": \\\\\\\"4K\\\\\\\", \\\\\\\"waterproof\\\\\\\": \\\\\\\"no\\\\\\\", \\\\\\\"color\\\\\\\": \\\\\\\"silver\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 521.07}, \\\\\\\"5436236388\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"5436236388\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"resolution\\\\\\\": \\\\\\\"1080p\\\\\\\", \\\\\\\"waterproof\\\\\\\": \\\\\\\"yes\\\\\\\", \\\\\\\"color\\\\\\\": \\\\\\\"silver\\\\\\\"}, \\\\\\\"available\\\\\\\": false, \\\\\\\"price\\\\\\\": 538.6}}}\\\",\\\"error\\\":null,\\\"category\\\":null,\\\"decision\\\":\\\"feedback\\\",\\\"attempts\\\":1,\\\"error_info\\\":null}\",\"offset\":0,\"next_of",
+              "source_message_ids": [
+                "d3619d16b12c403d9a3d6bbca4909279"
+              ],
+              "source_message_seqs": [
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "needle": "521.07",
+          "meaning": "Same item price; check the neighboring object rather than another variant.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 22,
+              "role": "tool",
+              "offset": 2715,
+              "excerpt": "waterproof\\\\\\\": \\\\\\\"no\\\\\\\", \\\\\\\"color\\\\\\\": \\\\\\\"silver\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 521.07}, \\\\\\\"5436236388\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"5436236388\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"resolution\\\\\\\": \\\\\\\"1080p\\\\\\\", \\\\\\\"waterproof\\\\\\\": \\\\\\\"yes\\\\\\\", \\\\\\\"color\\\\\\\": \\\\\\\"silver\\\\\\\"}, \\\\\\\"available\\\\\\\": false, \\\\\\\"price\\\\\\\": 538.6}}}\\\",\\\"error\\\":null,\\\"category\\\":null,\\\"decision\\\":\\\"feedback\\\",\\\"attempts\\\":1,\\\"error_info\\\":null}\",\"offset\":0,\"next_offset\":null,\"total_chars\":2294},\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null}",
+              "source_message_ids": [
+                "d3619d16b12c403d9a3d6bbca4909279"
+              ],
+              "source_message_seqs": [
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "needle": "$537.01 or less",
+          "meaning": "Current user asks for cameras under budget and nearest price.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 16,
+              "role": "user",
+              "offset": 87,
+              "excerpt": "Yeah, sure. That would be helpful. Can you show me what cameras are available that are $537.01 or less? I want to pick the one closest to that price point.",
+              "source_message_ids": [
+                "64797997337f4b3cb9300bf87e880b9e"
+              ],
+              "source_message_seqs": [
+                16
+              ]
+            }
+          ]
+        }
+      ],
+      "policy_needles": [
+        "should not make up any information"
+      ],
+      "preconditions": [
+        "Attributes must be joined to the matching item ID in the current visible page.",
+        "Listing product information is different from a supported ability to place a new order."
+      ],
+      "reasonable_actions": [
+        "If listing item 9391733462, report waterproof No; the closest eligible visible item is 7523669277 at 523.66.",
+        "A relevant additional page/read is safe if needed for omitted options; do not invent unseen variants."
+      ],
+      "failures": [
+        "Describe item 9391733462 as waterproof Yes.",
+        "Transfer attributes between variants or assert a new-order tool exists."
+      ],
+      "authorization": "Information request only; no new purchase/write authorization.",
+      "missing_or_conflicting": "No contradictory newer fact about this item's waterproof status. Full catalog completeness should not be inferred from a partial page.",
+      "historical_observation": "E44/M23 lists this item as waterproof Yes although E43 contains No.",
+      "evidence_strength": "high for this attribute error; internal reading/association mechanism remains a hypothesis",
+      "other_causes": "No tool-state change explains this discrepancy. Adjacent variant fields are a possible association source, not a proven mechanism; simulator did not supply the wrong attribute."
+    },
+    {
+      "id": "confirmed-return",
+      "category": "correct_execution_control",
+      "facts": [
+        {
+          "role": "user",
+          "needle": "Yes.",
+          "meaning": "Latest user confirms return, then asks about labels; the additional question does not revoke confirmation.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 22,
+              "role": "user",
+              "offset": 0,
+              "excerpt": "Yes.\n\nSo, just to be clear—I get the refund for the kettle and the keyboard? And I keep the pet bed? Okay. Good. What do I need to do now? Do I have a label?",
+              "source_message_ids": [
+                "e438508d6934423f92bfc99295ace335"
+              ],
+              "source_message_seqs": [
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "role": "assistant",
+          "needle": "7602931732",
+          "meaning": "Proposed return details identify kettle and keyboard; must be cross-checked with visible tool data.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 21,
+              "role": "assistant",
+              "offset": 574,
+              "excerpt": "n details:\n\n**Return Summary:**\n- Order: #W5565470\n- Items to return:\n  - Electric Kettle (Item ID: 7602931732) - $153.25\n  - Mechanical Keyboard (Item ID: 9570044148) - $231.37\n- Total refund amount: $384.62\n- Refund method: Your original PayPal account (paypal_3024827)\n- After confirmation, the order status will change to \"return requested\" and you will receive a follow-up email with instructions on how and where to return the items.\n\nPlease confirm with a \"yes\" if you would like to proceed with this return.",
+              "source_message_ids": [
+                "dadbca58843c4597ae7134d354e68157"
+              ],
+              "source_message_seqs": [
+                21
+              ]
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "needle": "#W5565470",
+          "meaning": "Matching delivered Texas order is in visible tool evidence.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 8,
+              "role": "tool",
+              "offset": 520,
+              "excerpt": "{\\\"source\\\": \\\"paypal\\\", \\\"id\\\": \\\"paypal_3024827\\\"}}, \\\"orders\\\": [\\\"#W3792453\\\", \\\"#W7181492\\\", \\\"#W5565470\\\", \\\"#W2575533\\\"]}\",\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null,\"observation_ref\":\"1782898e3e3242adb4f30ef7a5185611\"}",
+              "source_message_ids": [
+                "ac9ff9baab01461caf8e7fb3ea45f325"
+              ],
+              "source_message_seqs": [
+                8
+              ]
+            },
+            {
+              "request_message_index": 16,
+              "role": "tool",
+              "offset": 57,
+              "excerpt": "{\"status\":\"returned\",\"ok\":true,\"value\":\"{\\\"order_id\\\": \\\"#W5565470\\\", \\\"user_id\\\": \\\"isabella_johansson_2152\\\", \\\"address\\\": {\\\"address1\\\": \\\"812 Cedar Avenue\\\", \\\"address2\\\": \\\"Suite 500\\\", \\\"city\\\": \\\"Houston\\\", \\\"country\\\": \\\"USA\\\", \\\"state\\\": \\\"TX\\\", \\\"zip\\\": \\\"77129\\\"}, \\\"items\\\": [{\\\"name\\\": \\\"Electric Kettle\\\", \\\"product_id\\\": \\\"1075968781\\\", \\\"item_id\\\": \\\"7602931732\\\", \\\"price\\\": 153.25, \\\"options\\\": {\\\"capacity\\\": \\\"1L\\\", \\\"material\\\": \\\"stainless steel\\\", \\\"color\\\": \\\"black\\\"}}, {\\\"name\\\": \\\"Mechanical Keyboard\\\", \\\"product_id\\\": \\\"1656367028\\\", \\\"item_id\\\": \\\"9570044148\\\", \\\"price\\\": 231.37, \\\"opt",
+              "source_message_ids": [
+                "60d07a1f22524d80a1441f1fd8d17786"
+              ],
+              "source_message_seqs": [
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "needle": "paypal_3024827",
+          "meaning": "Original eligible payment method in visible order data.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 8,
+              "role": "tool",
+              "offset": 402,
+              "excerpt": "\\\", \\\"zip\\\": \\\"32286\\\"}, \\\"email\\\": \\\"isabella.johansson9391@example.com\\\", \\\"payment_methods\\\": {\\\"paypal_3024827\\\": {\\\"source\\\": \\\"paypal\\\", \\\"id\\\": \\\"paypal_3024827\\\"}}, \\\"orders\\\": [\\\"#W3792453\\\", \\\"#W7181492\\\", \\\"#W5565470\\\", \\\"#W2575533\\\"]}\",\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null,\"observation_ref\":\"1782898e3e3242adb4f30ef7a5185611\"}",
+              "source_message_ids": [
+                "ac9ff9baab01461caf8e7fb3ea45f325"
+              ],
+              "source_message_seqs": [
+                8
+              ]
+            },
+            {
+              "request_message_index": 10,
+              "role": "tool",
+              "offset": 718,
+              "excerpt": "payment_history\\\": [{\\\"transaction_type\\\": \\\"payment\\\", \\\"amount\\\": 200.8, \\\"payment_method_id\\\": \\\"paypal_3024827\\\"}], \\\"cancel_reason\\\": null, \\\"exchange_items\\\": null, \\\"exchange_new_items\\\": null, \\\"exchange_payment_method_id\\\": null, \\\"exchange_price_difference\\\": null, \\\"return_items\\\": null, \\\"return_payment_method_id\\\": null}\",\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null,\"observation_ref\":\"ba7a40eb69b9480b835a08141780be79\"}",
+              "source_message_ids": [
+                "057531ece5d34f60b9b4906ac41095fc"
+              ],
+              "source_message_seqs": [
+                10
+              ]
+            },
+            {
+              "request_message_index": 14,
+              "role": "tool",
+              "offset": 2192,
+              "excerpt": "{\\\\\\\"transaction_type\\\\\\\": \\\\\\\"payment\\\\\\\", \\\\\\\"amount\\\\\\\": 1262.41, \\\\\\\"payment_method_id\\\\\\\": \\\\\\\"paypal_3024827\\\\\\\"}], \\\\\\\"cancel_reason\\\\\\\": null, \\\\\\\"exchange_items\\\\\\\": null, \\\\\\\"exchange_new_items\\\\\\\": null, \\\\\\\"exchange_payment_method_id\\\\\\\": null, \\\\\\\"exchange_price_difference\\\\\\\": null, \\\\\\\"return_items\\\\\\\": null, \\\\\\\"return_payment_method_id\\\\\\\": null}\\\",\\\"error\\\":null,\\\"category\\\":null,\\\"decision\\\":\\\"feedback\\\",\\\"attempts\\\":1,\\\"error_info\\\":null}\",\"offset\":0,\"next_offset\":null,\"total_chars\":1934},\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null}",
+              "source_message_ids": [
+                "f2db150b3a8d4010bef70d47a3bbabf3"
+              ],
+              "source_message_seqs": [
+                14
+              ]
+            },
+            {
+              "request_message_index": 16,
+              "role": "tool",
+              "offset": 1149,
+              "excerpt": "ayment_history\\\": [{\\\"transaction_type\\\": \\\"payment\\\", \\\"amount\\\": 581.15, \\\"payment_method_id\\\": \\\"paypal_3024827\\\"}], \\\"cancel_reason\\\": null, \\\"exchange_items\\\": null, \\\"exchange_new_items\\\": null, \\\"exchange_payment_method_id\\\": null, \\\"exchange_price_difference\\\": null, \\\"return_items\\\": null, \\\"return_payment_method_id\\\": null}\",\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null,\"observation_ref\":\"e0d78f2bca034b0a8ca01b59f548acf4\"}",
+              "source_message_ids": [
+                "60d07a1f22524d80a1441f1fd8d17786"
+              ],
+              "source_message_seqs": [
+                16
+              ]
+            },
+            {
+              "request_message_index": 20,
+              "role": "tool",
+              "offset": 2030,
+              "excerpt": "{\\\\\\\"transaction_type\\\\\\\": \\\\\\\"payment\\\\\\\", \\\\\\\"amount\\\\\\\": 1619.34, \\\\\\\"payment_method_id\\\\\\\": \\\\\\\"paypal_3024827\\\\\\\"}], \\\\\\\"cancel_reason\\\\\\\": null, \\\\\\\"exchange_items\\\\\\\": null, \\\\\\\"exchange_new_items\\\\\\\": null, \\\\\\\"exchange_payment_method_id\\\\\\\": null, \\\\\\\"exchange_price_difference\\\\\\\": null, \\\\\\\"return_items\\\\\\\": null, \\\\\\\"return_payment_method_id\\\\\\\": null}\\\",\\\"error\\\":null,\\\"category\\\":null,\\\"decision\\\":\\\"feedback\\\",\\\"attempts\\\":1,\\\"error_info\\\":null}\",\"offset\":0,\"next_offset\":null,\"total_chars\":1812},\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null}",
+              "source_message_ids": [
+                "6efb5552ad4e4238b2cc75508d400315"
+              ],
+              "source_message_seqs": [
+                20
+              ]
+            }
+          ]
+        }
+      ],
+      "policy_needles": [
+        "An order can only be returned if its status is 'delivered'",
+        "user needs to confirm the order id"
+      ],
+      "preconditions": [
+        "Delivered order #W5565470, return item IDs 7602931732 and 9570044148, keep Pet Bed, refund to paypal_3024827.",
+        "Details already presented and explicitly confirmed; no unknown prior write result."
+      ],
+      "reasonable_actions": [
+        "Call return_delivered_order_items with that order, those two items and the eligible original method; do not run it in this study."
+      ],
+      "safe_no_progress": [
+        "Only repeat the confirmation request or promise future handling without a justified missing condition.",
+        "An extra read may be safe but does not count as successful execution at this decision point."
+      ],
+      "failures": [
+        "Return the pet bed, another order or wrong payment method.",
+        "Claim return already completed before the result.",
+        "Treat label question as withdrawal of explicit yes without evidence."
+      ],
+      "authorization": "Explicit current confirmation; no new conflicting instruction.",
+      "missing_or_conflicting": "No missing material field identified. Label creation is not an independent existing tool; explain next steps only after supported result.",
+      "historical_observation": "E48 issues the matching return tool call; correctness is based on visible instruction and tool facts, not reward.",
+      "evidence_strength": "high for decision-level compliant action",
+      "other_causes": "Tests whether checking causes unnecessary refusal/clarification; official reward is not an input or the local criterion."
+    },
+    {
+      "id": "query-before-choice",
+      "category": "reasonable_query_control",
+      "facts": [
+        {
+          "role": "tool",
+          "needle": "yusuf_hernandez_6785",
+          "meaning": "User identity authenticated; profile lists own orders.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 6,
+              "role": "tool",
+              "offset": 40,
+              "excerpt": "{\"status\":\"returned\",\"ok\":true,\"value\":\"yusuf_hernandez_6785\",\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null,\"observation_ref\":\"c03359ec831846e88a921e1c24d5eb1a\"}",
+              "source_message_ids": [
+                "fb043fb171db4a548bcac50fe5dd4636"
+              ],
+              "source_message_seqs": [
+                6
+              ]
+            },
+            {
+              "request_message_index": 8,
+              "role": "tool",
+              "offset": 56,
+              "excerpt": "{\"status\":\"returned\",\"ok\":true,\"value\":\"{\\\"user_id\\\": \\\"yusuf_hernandez_6785\\\", \\\"name\\\": {\\\"first_name\\\": \\\"Yusuf\\\", \\\"last_name\\\": \\\"Hernandez\\\"}, \\\"address\\\": {\\\"address1\\\": \\\"580 Broadway\\\", \\\"address2\\\": \\\"Suite 162\\\", \\\"city\\\": \\\"Denver\\\", \\\"country\\\": \\\"USA\\\", \\\"state\\\": \\\"CO\\\", \\\"zip\\\": \\\"80265\\\"}, \\\"email\\\": \\\"yusuf.hernandez8836@example.com\\\", \\\"payment_methods\\\": {\\\"paypal_7529813\\\": {\\\"source\\\": \\\"paypal\\\", \\\"id\\\": \\\"paypal_7529813\\\"}}, \\\"orders\\\": [\\\"#W2166301\\\", \\\"#W2466703\\\", \\\"#W6832752\\\", \\\"#W7739115\\\", \\\"#W1994898\\\"]}\",\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null,\"",
+              "source_message_ids": [
+                "6d61a6fd78c445c093565a588062aabc"
+              ],
+              "source_message_seqs": [
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "role": "tool",
+          "needle": "#W2166301",
+          "meaning": "Owned order ID is available but its contents/status are not yet known in this prefix.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 8,
+              "role": "tool",
+              "offset": 468,
+              "excerpt": "thods\\\": {\\\"paypal_7529813\\\": {\\\"source\\\": \\\"paypal\\\", \\\"id\\\": \\\"paypal_7529813\\\"}}, \\\"orders\\\": [\\\"#W2166301\\\", \\\"#W2466703\\\", \\\"#W6832752\\\", \\\"#W7739115\\\", \\\"#W1994898\\\"]}\",\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null,\"observation_ref\":\"1c09f44891b1465fb443e2a2a8283dc6\"}",
+              "source_message_ids": [
+                "6d61a6fd78c445c093565a588062aabc"
+              ],
+              "source_message_seqs": [
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "needle": "jacket",
+          "meaning": "Earlier public request concerns jacket plus address update.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 2,
+              "role": "user",
+              "offset": 25,
+              "excerpt": "Hi. I need to exchange a jacket. And change my address.",
+              "source_message_ids": [
+                "d1044cb9e7084e55885b7b6fd1ada782"
+              ],
+              "source_message_seqs": [
+                2
+              ]
+            }
+          ]
+        }
+      ],
+      "policy_needles": [
+        "authenticate the user identity",
+        "check its status before taking the action"
+      ],
+      "preconditions": [
+        "Determine which owned order contains the jacket and its policy-relevant status before an exchange/write.",
+        "A known order ID is not evidence of its contents or chronology."
+      ],
+      "reasonable_actions": [
+        "Query get_order_details for one of the owned listed orders; no fixed requirement to pick the historical first ID.",
+        "Ask a targeted order-identification question if useful without re-authenticating."
+      ],
+      "failures": [
+        "Guess contents/status/date from the order ID.",
+        "Write before the target order, item details and confirmation are established.",
+        "Query a fabricated/unowned order or needlessly demand authentication again."
+      ],
+      "authorization": "Authorized informational assistance; no precise exchange/address write confirmation yet.",
+      "missing_or_conflicting": "Order contents/status and new address fields are missing; relevant query is legitimate, not wasted work.",
+      "historical_observation": "E15 chooses get_order_details for an owned order.",
+      "evidence_strength": "high for a reasonable query, multiple next actions acceptable",
+      "other_causes": "Controls against a mechanism that suppresses every query; do not require an unseen correct order from a reference answer."
+    },
+    {
+      "id": "missing-address-field",
+      "category": "necessary_clarification_control",
+      "facts": [
+        {
+          "role": "user",
+          "needle": "101 Highway, New York, 10001. USA.",
+          "meaning": "New street/city/ZIP/country supplied; state and second-line handling are not explicitly specified.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 12,
+              "role": "user",
+              "offset": 17,
+              "excerpt": "Yeah, sure. It's 101 Highway, New York, 10001. USA.",
+              "source_message_ids": [
+                "ce0c49749ee1458f8f3156311e78649b"
+              ],
+              "source_message_seqs": [
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "needle": "Default and orders",
+          "meaning": "Original scope covers default address and orders; do not ask the whole scope again.",
+          "actual_visible_sources": [
+            {
+              "request_message_index": 2,
+              "role": "user",
+              "offset": 55,
+              "excerpt": "Hey. Yeah, hi. I need to change my address. All of it. Default and orders.",
+              "source_message_ids": [
+                "a460cfb88c54411eb8b6a40eee88a96c"
+              ],
+              "source_message_seqs": [
+                2
+              ]
+            }
+          ]
+        }
+      ],
+      "policy_needles": [
+        "list the action details and obtain explicit user confirmation"
+      ],
+      "preconditions": [
+        "Do not reuse the old suite number or invent an unspecified new apartment.",
+        "Present final details and obtain confirmation before a write."
+      ],
+      "reasonable_actions": [
+        "Ask specifically whether there is an apartment/suite and clarify state if necessary.",
+        "Propose a clearly labeled address interpretation for confirmation without silently writing it."
+      ],
+      "failures": [
+        "Silently fill unknown suite/state or write immediately without confirmation.",
+        "Re-ask identity or the entire already supplied task scope."
+      ],
+      "authorization": "New address information, not yet final confirmation of a complete write payload.",
+      "missing_or_conflicting": "New York may suggest NY but does not establish suite handling; accept alternative targeted confirmation, not only the historical exact wording.",
+      "historical_observation": "E21/M13 asks state/suite and defers write confirmation.",
+      "evidence_strength": "high for required suite handling/confirmation; state question is reasonable rather than uniquely necessary",
+      "other_causes": "Controls against treating all clarifications as model failure or forcing action without complete confirmed details."
+    }
+  ]
+}

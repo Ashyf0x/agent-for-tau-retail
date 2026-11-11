@@ -1,0 +1,161 @@
+{
+  "kind": "future_two_stage_validation_plan",
+  "authorized_for_real_calls": false,
+  "actual_api_calls": 0,
+  "roles": {
+    "agent": {
+      "model": "deepseek-v4.1-flash-1017",
+      "base_url": "https://ws-nn3ehvxn6iggxh19.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "provider": "bailian_deepseek",
+      "thinking": true,
+      "preserve_thinking": false,
+      "temperature": 0,
+      "provider_seed": null,
+      "model_source": "explicit --agent-model",
+      "base_url_source": "AGENT_BASE_URL"
+    },
+    "user": {
+      "model": "qwen3.7-flash",
+      "base_url": "https://ws-nn3ehvxn6iggxh19.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "provider": "qwen",
+      "thinking": false,
+      "preserve_thinking": false,
+      "temperature": 0,
+      "provider_seed": 42,
+      "model_source": "AGENT_MODEL",
+      "base_url_source": "AGENT_BASE_URL"
+    },
+    "communicate": {
+      "model": "qwen3.7-flash",
+      "base_url": "https://ws-nn3ehvxn6iggxh19.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "provider": "qwen",
+      "thinking": false,
+      "preserve_thinking": false,
+      "temperature": 0,
+      "provider_seed": null,
+      "model_source": "AGENT_MODEL",
+      "base_url_source": "AGENT_BASE_URL"
+    },
+    "nl": {
+      "model": "qwen3.7-flash",
+      "base_url": "https://ws-nn3ehvxn6iggxh19.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "provider": "qwen",
+      "thinking": false,
+      "preserve_thinking": false,
+      "temperature": 0,
+      "provider_seed": null,
+      "model_source": "AGENT_MODEL",
+      "base_url_source": "AGENT_BASE_URL"
+    }
+  },
+  "resources": {
+    "profile": "relaxed",
+    "max_calls_per_task": 80,
+    "core_max_steps": 24,
+    "task_budget_cny": "3.00"
+  },
+  "context": {
+    "policy": "capacity",
+    "compaction": "legacy",
+    "byte_margin": 2048,
+    "handoff_max_bytes": 16384
+  },
+  "output_limits": {
+    "agent": 9060,
+    "other_roles": 2048
+  },
+  "price_assumption": {
+    "input_cny_per_million": "2",
+    "output_cny_per_million": "8",
+    "approved": false,
+    "source": "https://help.aliyun.com/zh/model-studio/deepseek-v4-1-flash"
+  },
+  "configuration_and_source_freeze": "source-sha256.json",
+  "stages": [
+    {
+      "id": "protocol-probe",
+      "max_calls": 2,
+      "budget_cny": "0.70",
+      "worst_reserve_cny": "0.6776",
+      "authorization": false,
+      "tools": "synthetic protocol_echo only; never execute Retail tools",
+      "first_request_example_sha256": "74f092804a385862d8c20fa26d4e4f4ecc0ad92df4e989e55ad500d74877d91b",
+      "example": "protocol-mock/calls.jsonl first dispatch_intent (input only; mock responses must not be replayed as actual model evidence)",
+      "second_request": "construct from actual first model reply, preserving reasoning and tool-call ID; supply synthetic tool result",
+      "pass_requires": [
+        "HTTP200 with valid native single tool call and expected args",
+        "thinking field nonempty and separately recorded",
+        "second request includes actual history reasoning and matching tool result",
+        "final response stop, no further tool dispatch",
+        "both usages known, no unclosed reservation, durable source/config/request/response correlation"
+      ],
+      "on_failure": "stop before stage A; no third request, retry, protocol fallback or business tool"
+    },
+    {
+      "id": "A-fixed-decisions",
+      "requires": "protocol-probe passed with complete evidence and corresponding new authorization",
+      "max_calls": 6,
+      "budget_cny": "2.10",
+      "worst_reserve_cny": "2.0328",
+      "authorization": false,
+      "inputs": [
+        {
+          "id": "known-payment-constraint",
+          "task_id": "105",
+          "file": "known-payment-constraint/A.request.json",
+          "sha256": "dba0836d9e2e90a4e3d021c395d8961f687e449eef0f9f8b08b5e2988002f071",
+          "bytes": 38530
+        },
+        {
+          "id": "accepted-is-not-settled",
+          "task_id": "58",
+          "file": "accepted-is-not-settled/A.request.json",
+          "sha256": "b0f3d1d162f3833afb600138c17ba4566a1ed50af377f280eaf3354fe6ff4d6f",
+          "bytes": 62546
+        },
+        {
+          "id": "visible-attribute-no",
+          "task_id": "65",
+          "file": "visible-attribute-no/A.request.json",
+          "sha256": "c98faccc3eac0214f152691d1d3ffcdce194d3ad2ae5c4f02548bd543df18e1b",
+          "bytes": 40719
+        },
+        {
+          "id": "confirmed-return",
+          "task_id": "26",
+          "file": "confirmed-return/A.request.json",
+          "sha256": "f9e3e79ca75797f1b0bd8ab09d878a90386a30737e6f70db96db18c15f2819c9",
+          "bytes": 42048
+        },
+        {
+          "id": "query-before-choice",
+          "task_id": "86",
+          "file": "query-before-choice/A.request.json",
+          "sha256": "58a9e84901dd94d629adea60cf3fea7da597e28f21dd364198e065eddd55d19b",
+          "bytes": 23581
+        },
+        {
+          "id": "missing-address-field",
+          "task_id": "22",
+          "file": "missing-address-field/A.request.json",
+          "sha256": "edad1683520d967862ff838e56a250c3086e14a3294ed958cdcbc9dd8d4d9e33",
+          "bytes": 24715
+        }
+      ],
+      "input_root": "prepared-A",
+      "repetitions": 1,
+      "arms": [
+        "A"
+      ],
+      "tools_execute": false,
+      "simulator_or_judges": false,
+      "rubric_source": "../retail-decision-study-20261106/evidence-classification.json (evaluation only)",
+      "official_score": null,
+      "stop_rule": "If all three historical issues are absent and all controls acceptable, stop expanding. Otherwise report the exact error/ambiguity and wait for a new decision; never auto-run B/C."
+    }
+  ],
+  "combined_proposed_new_budget_cny": "2.80",
+  "combined_worst_reserve_cny": "2.7104",
+  "prior_budgets_inherited": false,
+  "scope_warning": "Qwen historical prefixes under a DeepSeek next-decision model, not native DeepSeek full-task runs"
+}

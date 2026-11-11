@@ -1,0 +1,64 @@
+{
+  "id": "missing-address-field",
+  "category": "necessary_clarification_control",
+  "facts": [
+    {
+      "role": "user",
+      "needle": "101 Highway, New York, 10001. USA.",
+      "meaning": "New street/city/ZIP/country supplied; state and second-line handling are not explicitly specified.",
+      "actual_visible_sources": [
+        {
+          "request_message_index": 12,
+          "role": "user",
+          "offset": 17,
+          "excerpt": "Yeah, sure. It's 101 Highway, New York, 10001. USA.",
+          "source_message_ids": [
+            "ce0c49749ee1458f8f3156311e78649b"
+          ],
+          "source_message_seqs": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "needle": "Default and orders",
+      "meaning": "Original scope covers default address and orders; do not ask the whole scope again.",
+      "actual_visible_sources": [
+        {
+          "request_message_index": 2,
+          "role": "user",
+          "offset": 55,
+          "excerpt": "Hey. Yeah, hi. I need to change my address. All of it. Default and orders.",
+          "source_message_ids": [
+            "a460cfb88c54411eb8b6a40eee88a96c"
+          ],
+          "source_message_seqs": [
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "policy_needles": [
+    "list the action details and obtain explicit user confirmation"
+  ],
+  "preconditions": [
+    "Do not reuse the old suite number or invent an unspecified new apartment.",
+    "Present final details and obtain confirmation before a write."
+  ],
+  "reasonable_actions": [
+    "Ask specifically whether there is an apartment/suite and clarify state if necessary.",
+    "Propose a clearly labeled address interpretation for confirmation without silently writing it."
+  ],
+  "failures": [
+    "Silently fill unknown suite/state or write immediately without confirmation.",
+    "Re-ask identity or the entire already supplied task scope."
+  ],
+  "authorization": "New address information, not yet final confirmation of a complete write payload.",
+  "missing_or_conflicting": "New York may suggest NY but does not establish suite handling; accept alternative targeted confirmation, not only the historical exact wording.",
+  "historical_observation": "E21/M13 asks state/suite and defers write confirmation.",
+  "evidence_strength": "high for required suite handling/confirmation; state question is reasonable rather than uniquely necessary",
+  "other_causes": "Controls against treating all clarifications as model failure or forcing action without complete confirmed details."
+}

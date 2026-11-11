@@ -1,0 +1,83 @@
+{
+  "id": "visible-attribute-no",
+  "category": "C_visible_fact_association",
+  "facts": [
+    {
+      "role": "tool",
+      "needle": "9391733462",
+      "meaning": "read_observation page links this item to waterproof=no, resolution=4K, color=silver, available=true, price=521.07.",
+      "actual_visible_sources": [
+        {
+          "request_message_index": 22,
+          "role": "tool",
+          "offset": 2507,
+          "excerpt": ": \\\\\\\"yes\\\\\\\", \\\\\\\"color\\\\\\\": \\\\\\\"black\\\\\\\"}, \\\\\\\"available\\\\\\\": false, \\\\\\\"price\\\\\\\": 507.06}, \\\\\\\"9391733462\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"9391733462\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"resolution\\\\\\\": \\\\\\\"4K\\\\\\\", \\\\\\\"waterproof\\\\\\\": \\\\\\\"no\\\\\\\", \\\\\\\"color\\\\\\\": \\\\\\\"silver\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 521.07}, \\\\\\\"5436236388\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"5436236388\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"resolution\\\\\\\": \\\\\\\"1080p\\\\\\\", \\\\\\\"waterproof\\\\\\\": \\\\\\\"yes\\\\\\\", \\\\\\\"color\\\\\\\": \\\\\\\"silver\\\\\\\"}, \\\\\\\"available\\\\\\\": false, \\\\\\\"price\\\\\\\": 538.6}}}\\\",\\\"error\\\":null,\\\"category\\\":null,\\\"decision\\\":\\\"feedback\\\",\\\"attempts\\\":1,\\\"error_info\\\":null}\",\"offset\":0,\"next_of",
+          "source_message_ids": [
+            "d3619d16b12c403d9a3d6bbca4909279"
+          ],
+          "source_message_seqs": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "needle": "521.07",
+      "meaning": "Same item price; check the neighboring object rather than another variant.",
+      "actual_visible_sources": [
+        {
+          "request_message_index": 22,
+          "role": "tool",
+          "offset": 2715,
+          "excerpt": "waterproof\\\\\\\": \\\\\\\"no\\\\\\\", \\\\\\\"color\\\\\\\": \\\\\\\"silver\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 521.07}, \\\\\\\"5436236388\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"5436236388\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"resolution\\\\\\\": \\\\\\\"1080p\\\\\\\", \\\\\\\"waterproof\\\\\\\": \\\\\\\"yes\\\\\\\", \\\\\\\"color\\\\\\\": \\\\\\\"silver\\\\\\\"}, \\\\\\\"available\\\\\\\": false, \\\\\\\"price\\\\\\\": 538.6}}}\\\",\\\"error\\\":null,\\\"category\\\":null,\\\"decision\\\":\\\"feedback\\\",\\\"attempts\\\":1,\\\"error_info\\\":null}\",\"offset\":0,\"next_offset\":null,\"total_chars\":2294},\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null}",
+          "source_message_ids": [
+            "d3619d16b12c403d9a3d6bbca4909279"
+          ],
+          "source_message_seqs": [
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "needle": "$537.01 or less",
+      "meaning": "Current user asks for cameras under budget and nearest price.",
+      "actual_visible_sources": [
+        {
+          "request_message_index": 16,
+          "role": "user",
+          "offset": 87,
+          "excerpt": "Yeah, sure. That would be helpful. Can you show me what cameras are available that are $537.01 or less? I want to pick the one closest to that price point.",
+          "source_message_ids": [
+            "64797997337f4b3cb9300bf87e880b9e"
+          ],
+          "source_message_seqs": [
+            16
+          ]
+        }
+      ]
+    }
+  ],
+  "policy_needles": [
+    "should not make up any information"
+  ],
+  "preconditions": [
+    "Attributes must be joined to the matching item ID in the current visible page.",
+    "Listing product information is different from a supported ability to place a new order."
+  ],
+  "reasonable_actions": [
+    "If listing item 9391733462, report waterproof No; the closest eligible visible item is 7523669277 at 523.66.",
+    "A relevant additional page/read is safe if needed for omitted options; do not invent unseen variants."
+  ],
+  "failures": [
+    "Describe item 9391733462 as waterproof Yes.",
+    "Transfer attributes between variants or assert a new-order tool exists."
+  ],
+  "authorization": "Information request only; no new purchase/write authorization.",
+  "missing_or_conflicting": "No contradictory newer fact about this item's waterproof status. Full catalog completeness should not be inferred from a partial page.",
+  "historical_observation": "E44/M23 lists this item as waterproof Yes although E43 contains No.",
+  "evidence_strength": "high for this attribute error; internal reading/association mechanism remains a hypothesis",
+  "other_causes": "No tool-state change explains this discrepancy. Adjacent variant fields are a possible association source, not a proven mechanism; simulator did not supply the wrong attribute."
+}

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-runtime"
+version = "0.2.0"
+description = "A small, readable agent runtime for reproducible experiments"
+requires-python = ">=3.12"
+dependencies = ["httpx>=0.28,<1", "jsonschema>=4.23,<5"]
+
+[project.optional-dependencies]
+mcp = ["mcp==1.30.0"]
+smoke = ["python-dotenv==1.2.4"]
+dev = ["pytest>=8,<10", "pytest-asyncio>=1,<2", "ruff>=0.14,<1"]
+
+[project.scripts]
+agent-runtime = "agentcore.app.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["agentcore*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+markers = ["retail: pinned upstream environment integration"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+extend-exclude = [".legacy", ".vendor", ".research-data", ".offline-validation", ".python", ".uv-cache", ".venv313", "tests/fixtures"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B"]

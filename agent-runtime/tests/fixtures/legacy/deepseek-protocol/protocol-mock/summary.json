@@ -1,0 +1,40 @@
+{
+  "calls": 2,
+  "per_role": {
+    "agent": {
+      "calls": 2,
+      "input_tokens": 200,
+      "output_tokens": 60,
+      "unknown_usage": 0
+    },
+    "user": {
+      "calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "unknown_usage": 0
+    },
+    "communicate": {
+      "calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "unknown_usage": 0
+    },
+    "nl": {
+      "calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "unknown_usage": 0
+    }
+  },
+  "estimated_cny": "0.00088",
+  "unresolved_reservation_cny": "0",
+  "unknown_usage_call_ids": [],
+  "unterminated_call_ids": [],
+  "incomplete_last_line": false,
+  "cost_complete": true,
+  "absolute_bill_guaranteed": false,
+  "mode": "http_mock_only",
+  "real_api_calls": 0,
+  "business_tools_executed": 0,
+  "estimated_fixture_usage_not_real_bill": true
+}

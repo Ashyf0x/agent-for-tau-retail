@@ -1,0 +1,8 @@
+{
+  "scope": "protocol probe only",
+  "max_calls": 2,
+  "budget_cny": "0.70",
+  "A_snapshots_authorized": false,
+  "other_role_calls_authorized": false,
+  "business_tool_execution_authorized": false
+}

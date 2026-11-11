@@ -1,0 +1,167 @@
+{
+  "id": "known-payment-constraint",
+  "category": "A_known_precondition",
+  "facts": [
+    {
+      "role": "tool",
+      "needle": "gift_card_7245904",
+      "meaning": "Current account has only this gift card; its visible balance is 17.00.",
+      "actual_visible_sources": [
+        {
+          "request_message_index": 8,
+          "role": "tool",
+          "offset": 959,
+          "excerpt": "payment_history\\\": [{\\\"transaction_type\\\": \\\"payment\\\", \\\"amount\\\": 189.6, \\\"payment_method_id\\\": \\\"gift_card_7245904\\\"}], \\\"cancel_reason\\\": null, \\\"exchange_items\\\": null, \\\"exchange_new_items\\\": null, \\\"exchange_payment_method_id\\\": null, \\\"exchange_price_difference\\\": null, \\\"return_items\\\": null, \\\"return_payment_method_id\\\": null}\",\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null,\"observation_ref\":\"0cc85f862d13405e8ac7cee6d4a67fb4\"}",
+          "source_message_ids": [
+            "8aaf1c9ad1f44126bae11ce4b9010515"
+          ],
+          "source_message_seqs": [
+            8
+          ]
+        },
+        {
+          "request_message_index": 14,
+          "role": "tool",
+          "offset": 386,
+          "excerpt": "\\\"PA\\\", \\\"zip\\\": \\\"19031\\\"}, \\\"email\\\": \\\"aarav.anderson9752@example.com\\\", \\\"payment_methods\\\": {\\\"gift_card_7245904\\\": {\\\"source\\\": \\\"gift_card\\\", \\\"id\\\": \\\"gift_card_7245904\\\", \\\"balance\\\": 17.0}}, \\\"orders\\\": [\\\"#W4316152\\\", \\\"#W9311069\\\", \\\"#W9300146\\\", \\\"#W3220203\\\", \\\"#W3470184\\\"]}\",\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null,\"observation_ref\":\"6c28c182908343aead41567355e06469\"}",
+          "source_message_ids": [
+            "4b3686b3ef1540d0858a991200ce7638"
+          ],
+          "source_message_seqs": [
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "needle": "17.0",
+      "meaning": "Payment balance from get_user_details; not an Agent assertion.",
+      "actual_visible_sources": [
+        {
+          "request_message_index": 14,
+          "role": "tool",
+          "offset": 479,
+          "excerpt": "\\\": {\\\"gift_card_7245904\\\": {\\\"source\\\": \\\"gift_card\\\", \\\"id\\\": \\\"gift_card_7245904\\\", \\\"balance\\\": 17.0}}, \\\"orders\\\": [\\\"#W4316152\\\", \\\"#W9311069\\\", \\\"#W9300146\\\", \\\"#W3220203\\\", \\\"#W3470184\\\"]}\",\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null,\"observation_ref\":\"6c28c182908343aead41567355e06469\"}",
+          "source_message_ids": [
+            "4b3686b3ef1540d0858a991200ce7638"
+          ],
+          "source_message_seqs": [
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "needle": "101.12",
+      "meaning": "First selected kettle price.",
+      "actual_visible_sources": [
+        {
+          "request_message_index": 12,
+          "role": "tool",
+          "offset": 1986,
+          "excerpt": "2 liters\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"gas\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 101.12}, \\\\\\\"7292993796\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"7292993796\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"material\\\\\\\": \\\\\\\"glass\\\\\\\", \\\\\\\"capacity\\\\\\\": \\\\\\\"2 liters\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"induction\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 94.8}, \\\\\\\"9747045638\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"9747045638\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"material\\\\\\\": \\\\\\\"glass\\\\\\\", \\\\\\\"capacity\\\\\\\": \\\\\\\"1 liter\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"electric\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 94.01}, \\\\\\\"3312883418\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"3312883418\\\\\\\", \\\\",
+          "source_message_ids": [
+            "e85189fd652e40fcbe2567656f23fb0f"
+          ],
+          "source_message_seqs": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "needle": "109.58",
+      "meaning": "Second selected kettle price.",
+      "actual_visible_sources": [
+        {
+          "request_message_index": 12,
+          "role": "tool",
+          "offset": 510,
+          "excerpt": "5 liters\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"gas\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 109.58}, \\\\\\\"6454334990\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"6454334990\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"material\\\\\\\": \\\\\\\"glass\\\\\\\", \\\\\\\"capacity\\\\\\\": \\\\\\\"1.5 liters\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"induction\\\\\\\"}, \\\\\\\"available\\\\\\\": false, \\\\\\\"price\\\\\\\": 98.82}, \\\\\\\"4238115171\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"4238115171\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"material\\\\\\\": \\\\\\\"stainless steel\\\\\\\", \\\\\\\"capacity\\\\\\\": \\\\\\\"2 liters\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"gas\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 91.78}, \\\\\\\"3909406921\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"39094069",
+          "source_message_ids": [
+            "e85189fd652e40fcbe2567656f23fb0f"
+          ],
+          "source_message_seqs": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "needle": "94.8",
+      "meaning": "Each of the two original kettles costs 94.80.",
+      "actual_visible_sources": [
+        {
+          "request_message_index": 8,
+          "role": "tool",
+          "offset": 387,
+          "excerpt": "[{\\\"name\\\": \\\"Tea Kettle\\\", \\\"product_id\\\": \\\"9832717871\\\", \\\"item_id\\\": \\\"7292993796\\\", \\\"price\\\": 94.8, \\\"options\\\": {\\\"material\\\": \\\"glass\\\", \\\"capacity\\\": \\\"2 liters\\\", \\\"stovetop compatibility\\\": \\\"induction\\\"}}, {\\\"name\\\": \\\"Tea Kettle\\\", \\\"product_id\\\": \\\"9832717871\\\", \\\"item_id\\\": \\\"7292993796\\\", \\\"price\\\": 94.8, \\\"options\\\": {\\\"material\\\": \\\"glass\\\", \\\"capacity\\\": \\\"2 liters\\\", \\\"stovetop compatibility\\\": \\\"induction\\\"}}], \\\"status\\\": \\\"delivered\\\", \\\"fulfillments\\\": [{\\\"tracking_id\\\": [\\\"555227871167\\\"], \\\"item_ids\\\": [\\\"7292993796\\\", \\\"7292993796\\\"]}], \\\"payment_history\\\": [{\\\"transaction_type\\\": \\\"payment\\\", \\\"amount\\\": 189.6, \\\"payme",
+          "source_message_ids": [
+            "8aaf1c9ad1f44126bae11ce4b9010515"
+          ],
+          "source_message_seqs": [
+            8
+          ]
+        },
+        {
+          "request_message_index": 12,
+          "role": "tool",
+          "offset": 2232,
+          "excerpt": "rs\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"induction\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 94.8}, \\\\\\\"9747045638\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"9747045638\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"material\\\\\\\": \\\\\\\"glass\\\\\\\", \\\\\\\"capacity\\\\\\\": \\\\\\\"1 liter\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"electric\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 94.01}, \\\\\\\"3312883418\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"3312883418\\\\\\\", \\\\\\\"options\\\\\\\": {\\\\\\\"material\\\\\\\": \\\\\\\"ceramic\\\\\\\", \\\\\\\"capacity\\\\\\\": \\\\\\\"1.5 liters\\\\\\\", \\\\\\\"stovetop compatibility\\\\\\\": \\\\\\\"induction\\\\\\\"}, \\\\\\\"available\\\\\\\": true, \\\\\\\"price\\\\\\\": 104.82}, \\\\\\\"8209752717\\\\\\\": {\\\\\\\"item_id\\\\\\\": \\\\\\\"8209752717\\\\",
+          "source_message_ids": [
+            "e85189fd652e40fcbe2567656f23fb0f"
+          ],
+          "source_message_seqs": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "needle": "3761330360",
+      "meaning": "Current choice identifies first replacement, second is 9647374798.",
+      "actual_visible_sources": [
+        {
+          "request_message_index": 16,
+          "role": "user",
+          "offset": 141,
+          "excerpt": "se out.\n\nFor the first one, I want the ceramic one that's 2 liters and works on gas. That’s item ID 3761330360.\n\nAnd for the second one... hmm, yeah, I need a 1.5 liter one that’s also gas compatible. Looking at the list... wait, none of the glass ones are gas compatible except the 1.5L one (ID 9647374798), but I think I saw a ceramic option? No, looking closer... ah, there isn't a ceramic 1.5L gas one listed here. Wait, let me check again.\n\nActually, looking at the options:\n- ID 9647374798 is Glass, 1.5L, Gas.\n- ID 3761330360 is Ceramic, 2L, Gas.\n\nI don't see a Ceramic 1.5L Gas option in this specific list. But my instructions say I want to exchange o",
+          "source_message_ids": [
+            "3a71e9a95d6b4795950f05659f316c22"
+          ],
+          "source_message_seqs": [
+            16
+          ]
+        }
+      ]
+    }
+  ],
+  "policy_needles": [
+    "it must have enough balance to cover the price difference",
+    "obtain explicit user confirmation"
+  ],
+  "preconditions": [
+    "Difference (101.12 + 109.58) - 2*94.80 = 21.10 exceeds 17.00; gap 4.10.",
+    "A known insufficient gift card cannot be presented as a feasible current payment option.",
+    "Item choice is not final informed confirmation of an affordable exchange."
+  ],
+  "reasonable_actions": [
+    "Explain the funding limitation accurately and discuss only supported alternatives.",
+    "Ask about a genuinely available eligible alternative or offer human assistance under the policy, without inventing ability to add a card or a top-up tool."
+  ],
+  "failures": [
+    "Offer to proceed with the known insufficient card as if confirmation could satisfy the balance requirement.",
+    "Submit the exchange with insufficient funding or invent partial payment/multiple-card support.",
+    "Claim this payment succeeded."
+  ],
+  "authorization": "Replacement choices supplied; no new affordable payment evidence or final feasible write authorization.",
+  "missing_or_conflicting": "No alternate payment method is visible; do not assume one can be added. Public user instructions are sufficient for this judgment; no hidden goals used.",
+  "historical_observation": "E33/M17 explicitly states 17.00 is below 21.10 yet asks whether to proceed using that card; no exchange write was sent.",
+  "evidence_strength": "high for contradictory proposal; not evidence of an executed unauthorized payment",
+  "other_causes": "Business funding constraint is real. This Context snapshot exposes the balance; unlike the earlier 30-task generic-error projection case, it is not missing feedback. Later simulator/termination behavior is excluded."
+}

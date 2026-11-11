@@ -1,0 +1,198 @@
+{
+  "kind": "retail_run_configuration",
+  "release": "v2.0.0",
+  "commit": "989d3285ae669e49503324bdb9981bf14fccedeb",
+  "benchmark": "text-v1",
+  "language": "en",
+  "domain": "retail",
+  "seed": 42,
+  "trials": 1,
+  "max_steps": 60,
+  "selection": "explicit IDs or first three numeric IDs; no outcome selection",
+  "tasks": [
+    {
+      "id": "22",
+      "sha256": "3d4b578edd226bed54c27d787ee712ffecdb9df7085e3d03b09a6ca2d728fbd0",
+      "reward_basis": [
+        "DB",
+        "NL_ASSERTION"
+      ],
+      "communicate_facts": 0,
+      "nl_assertions": 0,
+      "language_context": {
+        "language": "en",
+        "mode": "text",
+        "cross_lingual": false,
+        "pack_revision": "voice-v2-entity-order-v5-schema3-textneutral-voiceclauses",
+        "pack_sha256": "cd14ad9a7aaa298ce54c8c434f2cd1fb55500b13e6fdd1b824d92205a7e4f752",
+        "domain_revision": "voice-v2-frozen50-v1",
+        "tasks_sha256": "2ba1277c495189385f000e1c001a7f775c40c2a768a7146c730ab769b1157690",
+        "metadata_sha256": "2c28ba93593c772a1708c2fa25a654f3a301e1e432914a4fca16377e17150524",
+        "scenario_mode": "pack",
+        "scenario_sha256": "0f173e03eaa245fa9ce9c5b6c177be03910f49f2d93ad661c66a84293d7bb9b0",
+        "localization_map_sha256": null,
+        "localization_revision": null,
+        "runtime_rules_version": "regional-tools-v1",
+        "runtime_rules_sha256": "794587eb3341b18b1e376fb7781488d03af71cd766f048ea6082e9bc3bca3aed",
+        "task_selection": {
+          "task_set_name": "retail",
+          "task_split_name": "base",
+          "task_kwargs": {}
+        },
+        "task_sha256": "3d4b578edd226bed54c27d787ee712ffecdb9df7085e3d03b09a6ca2d728fbd0",
+        "canonical_task_id": "22",
+        "agent_greeting": "Hi! How can I help you today?",
+        "agent_language_clause": "Respond in English using Latin script; keep all tool calls, arguments, and structured outputs in English exactly as specified.",
+        "speech_insert_events_per_minute": null,
+        "backchannel_level": null,
+        "backchannel_prompt_version": null,
+        "caller_gender": "male",
+        "persona": {
+          "verbosity": "standard",
+          "interrupt_tendency": null,
+          "persona_id": "mamadou_diallo",
+          "mode": "text",
+          "gender": "male",
+          "locale": "Senegal",
+          "variety": "English",
+          "language": "en",
+          "display_language": "English",
+          "gender_guidance": "You are a male customer (he/him).",
+          "pragmatics_clauses": [
+            "Your register is mildly informal: short sentences, plain words, and small conversational fillers woven in naturally — 'yeah', 'sure', 'let me see here', 'okay so', 'no worries'.",
+            "When you open in a relaxed way, natural forms are 'Hi there', 'Hey, how's it going', or straight into it — 'Yeah, hi, I'm contacting you about an order I placed'.",
+            "When you are cooperative and unhurried, that surfaces as working the problem with the agent rather than against them and assuming good faith. If you're asked to wait and you're fine with it, natural forms are — 'Yeah, no problem, take your time', 'Sure, I'll hang on'.",
+            "When you disagree or need to decline, you do it gently and reasonably: 'Hmm, yeah, I don't think that's gonna work for me', 'Let me think about that one', 'Honestly I'd rather not do that if there's another way'. You give a reason rather than a flat 'no'.",
+            "When frustration rises, it stays mild. First you become more deliberate — 'Okay... hm, let me see here'. If it really drags, you get a touch firmer but not rude — 'Yeah, I get that, but this is the third time I've explained it'.",
+            "When the conversation wraps up cordially, closings run: 'Alright, that's great, thanks a lot', 'Okay, sounds good, appreciate it', 'Take care, bye now'. A wrap-up, then you end the conversation."
+          ],
+          "user_guidelines": "",
+          "mode_guidelines": "",
+          "agent_background_clause": "",
+          "language_directive": null,
+          "spellout_section": "",
+          "voice": null
+        },
+        "spelling_normalization_version": null,
+        "prompt_version": "language-runtime-v8",
+        "guideline_template_version": "language-guidelines-v4",
+        "assignment_version": "canonical-id-sha256-v1"
+      }
+    }
+  ],
+  "official_score": null,
+  "version": "retail-direct-pilot-v2-context",
+  "roles": {
+    "agent": {
+      "model": "qwen3.7-flash",
+      "base_url": "https://ws-nn3ehvxn6iggxh19.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "provider": "qwen",
+      "thinking": true,
+      "preserve_thinking": true,
+      "temperature": 0,
+      "provider_seed": null,
+      "model_source": "AGENT_MODEL",
+      "base_url_source": "AGENT_BASE_URL"
+    },
+    "user": {
+      "model": "qwen3.7-flash",
+      "base_url": "https://ws-nn3ehvxn6iggxh19.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "provider": "qwen",
+      "thinking": false,
+      "preserve_thinking": false,
+      "temperature": 0,
+      "provider_seed": 42,
+      "model_source": "AGENT_MODEL",
+      "base_url_source": "AGENT_BASE_URL"
+    },
+    "communicate": {
+      "model": "qwen3.7-flash",
+      "base_url": "https://ws-nn3ehvxn6iggxh19.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "provider": "qwen",
+      "thinking": false,
+      "preserve_thinking": false,
+      "temperature": 0,
+      "provider_seed": null,
+      "model_source": "AGENT_MODEL",
+      "base_url_source": "AGENT_BASE_URL"
+    },
+    "nl": {
+      "model": "qwen3.7-flash",
+      "base_url": "https://ws-nn3ehvxn6iggxh19.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "provider": "qwen",
+      "thinking": false,
+      "preserve_thinking": false,
+      "temperature": 0,
+      "provider_seed": null,
+      "model_source": "AGENT_MODEL",
+      "base_url_source": "AGENT_BASE_URL"
+    }
+  },
+  "budget_cny": "1.00",
+  "context": {
+    "policy": "capacity",
+    "compaction": "legacy",
+    "byte_margin": 2048,
+    "handoff_max_bytes": 16384
+  },
+  "configuration_inputs": {
+    "model": null,
+    "base_url": null
+  },
+  "limits": {
+    "max_calls": 40,
+    "max_request_bytes": 131072,
+    "input_token_proxy_ceiling": 133120,
+    "max_output_tokens": 2048,
+    "agent_max_output_tokens": 9060
+  },
+  "price_assumption": {
+    "currency": "CNY",
+    "input_cny_per_million": "1.2",
+    "output_cny_per_million": "4.8",
+    "historical_date": "2026-11-05",
+    "source": "Explicit flat price assumptions; defaults are historical smoke highest rates, not reverified",
+    "limits": "Byte proxy is not a tokenizer; estimates cannot guarantee account bill"
+  },
+  "authentication": {
+    "source": "--env-file, execution only",
+    "key_name": "DASHSCOPE_API_KEY",
+    "environment_fallback": false
+  },
+  "source_sha256": {
+    "evals/__init__.py": "fb7f4dad0e26df40225223cec4037fb1672c98f8d55f9b8b30072f7109b67e59",
+    "evals/pilot_calls.py": "78a81e90c34e87f69bedb4a452a1e45bb95fe58882a4251f784390c192b0f9ab",
+    "evals/pilot_config.py": "3ae69a60e15e24102fef4b002ce273af83c2b0d67518dbcf07f446f8083fa558",
+    "evals/retail.lock.json": "edf36d4e61325ee640923c197b27453368a0d5381e40936bc74eab600cce18c9",
+    "evals/retail.py": "524d1eaff384af8864505705ca3ecaa5aff331a9ed6b707de15c53610246c652",
+    "evals/retail_fixture.py": "35bc0badfef67f75096d0d756a33f35b594ad0685d8d81d4290804606016f540",
+    "evals/retail_interaction.py": "889a5611a6947ad52f78c750d48cc0b534034d219a03e7aa8c99ec5fc85cf6e5",
+    "evals/retail_pilot.py": "05adbb678656b6e6c90353513c9a712bcf119b327087168bf04171fe18e1d8a3",
+    "research_agent/__init__.py": "8d2c1643d0a64d4f94d8f4027d801beaa04c8b76f36745cac80c5334e351b50b",
+    "research_agent/__main__.py": "ae472dabaad1c51e27571d6920de89d5345998a296feed6621d515459aa5f4c1",
+    "research_agent/app/__init__.py": "d00e2a4f177dc1cc6a5f4e8cc584286a4d5864585f93cb8ff6ac19c6a815753c",
+    "research_agent/app/cli.py": "9dda6447269121402bc3b8be67cf561fb0457af98b3720023d23d38aa4c256b1",
+    "research_agent/app/smoke.py": "255f36114d80ebc1e0c43306689d8fca80ae9f88ecfc350f6eed31484d6039a4",
+    "research_agent/context/__init__.py": "bace90473e4f873c7dd622df0809de4fb7c408d082941d8ea97fc87f8fd87266",
+    "research_agent/context/manager.py": "a39755cf9d67e4cc8ebc817e3230e9fcd316af6ae84e15f30151ffe9891a310d",
+    "research_agent/core/__init__.py": "afb807c53da155d4f2271b2a68f0cf376e782c8e060d3990388d674644cadcad",
+    "research_agent/core/agent.py": "d65c345b5c95388bd3ce222de35e455bec45af51c2cdfae3586404227b92c33b",
+    "research_agent/core/errors.py": "de3ff1cfae3ce22581c4871499dab00592186c47efccca9f592191a8e5a19455",
+    "research_agent/core/model.py": "d0cd7bcfc3d62d0df1e03baa570dd97598153da73f37d7a9b30ff9d6c650868f",
+    "research_agent/core/types.py": "58fa60486a5dca24e625d90ddd6c3e01fe25e4c5a5e98cf5734b4e8475f94e65",
+    "research_agent/memory/__init__.py": "dd8439b7b5b600d504608a637d4fb301527628331c9ad75d893b9977a3d23ae1",
+    "research_agent/memory/extraction.py": "f6582aa735a178c78a2fa1fdb70a66a7b7c0c9a8135dee09e073e4632c24e3cf",
+    "research_agent/memory/local.py": "350d5a6f68efb116ccedcbd0f4a7b3c5988c2f2d36a7e349ac82fa61190d1721",
+    "research_agent/observability/__init__.py": "390ff7bd975e60e88d00f709b3f8abd2505a24c102ed5694d71923bde5a1cba3",
+    "research_agent/observability/report.py": "029419b6b472b5687c5fccf42a1db97beac1f6d40a0afd1ef22ac5b23f4afa3e",
+    "research_agent/observability/trajectory.py": "eee1d83d1e5c48425f2b9d947ab26ed8da082f4c3f6c50ee3468eca2532085d5",
+    "research_agent/storage/__init__.py": "597d1455dd9d51072ac35c17c1d066e4e67b494bef72f9529e94f4f2653c6b08",
+    "research_agent/storage/sqlite.py": "e94e3093ccaa88fc7283bbc47d7393dd6e35b4c9cb3ce333c34937d709a2c80f",
+    "research_agent/tools/__init__.py": "320aaee313ae2616bbd88eccf09f4214da79515e3ba48422ae92f884adcbf503",
+    "research_agent/tools/executor.py": "acdc7e847daf588475d85c64fedb52edac574a2d3feefdf28e72b5200c4578b3",
+    "research_agent/tools/mcp.py": "52385961d3196ffb6a7f379fa0e95cfd8dae04c9f49312faf1513739e0afb2d2"
+  },
+  "transport": "Existing HTTPModelClient, POST /chat/completions, nonstreaming, zero retries",
+  "memory_extraction": false,
+  "automatic_retries": 0
+}

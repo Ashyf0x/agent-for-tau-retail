@@ -1,0 +1,1045 @@
+{
+  "language_context": {
+    "language": "en",
+    "mode": "text",
+    "cross_lingual": false,
+    "pack_revision": "voice-v2-entity-order-v5-schema3-textneutral-voiceclauses",
+    "pack_sha256": "cd14ad9a7aaa298ce54c8c434f2cd1fb55500b13e6fdd1b824d92205a7e4f752",
+    "domain_revision": "voice-v2-frozen50-v1",
+    "tasks_sha256": "2ba1277c495189385f000e1c001a7f775c40c2a768a7146c730ab769b1157690",
+    "metadata_sha256": "2c28ba93593c772a1708c2fa25a654f3a301e1e432914a4fca16377e17150524",
+    "scenario_mode": "pack",
+    "scenario_sha256": "0f173e03eaa245fa9ce9c5b6c177be03910f49f2d93ad661c66a84293d7bb9b0",
+    "localization_map_sha256": null,
+    "localization_revision": null,
+    "runtime_rules_version": "regional-tools-v1",
+    "runtime_rules_sha256": "794587eb3341b18b1e376fb7781488d03af71cd766f048ea6082e9bc3bca3aed",
+    "task_selection": {
+      "task_set_name": "retail",
+      "task_split_name": "base",
+      "task_kwargs": {}
+    },
+    "task_sha256": "4a4cab31f00b7996fe5e819034316ea05f53b56a3d4b2e0f784b09ec05ae548f",
+    "canonical_task_id": "86",
+    "agent_greeting": "Hi! How can I help you today?",
+    "agent_language_clause": "Respond in English using Latin script; keep all tool calls, arguments, and structured outputs in English exactly as specified.",
+    "speech_insert_events_per_minute": null,
+    "backchannel_level": null,
+    "backchannel_prompt_version": null,
+    "caller_gender": "male",
+    "persona": {
+      "verbosity": "standard",
+      "interrupt_tendency": null,
+      "persona_id": "mamadou_diallo",
+      "mode": "text",
+      "gender": "male",
+      "locale": "Senegal",
+      "variety": "English",
+      "language": "en",
+      "display_language": "English",
+      "gender_guidance": "You are a male customer (he/him).",
+      "pragmatics_clauses": [
+        "Your register is mildly informal: short sentences, plain words, and small conversational fillers woven in naturally — 'yeah', 'sure', 'let me see here', 'okay so', 'no worries'.",
+        "When you open in a relaxed way, natural forms are 'Hi there', 'Hey, how's it going', or straight into it — 'Yeah, hi, I'm contacting you about an order I placed'.",
+        "When you are cooperative and unhurried, that surfaces as working the problem with the agent rather than against them and assuming good faith. If you're asked to wait and you're fine with it, natural forms are — 'Yeah, no problem, take your time', 'Sure, I'll hang on'.",
+        "When you disagree or need to decline, you do it gently and reasonably: 'Hmm, yeah, I don't think that's gonna work for me', 'Let me think about that one', 'Honestly I'd rather not do that if there's another way'. You give a reason rather than a flat 'no'.",
+        "When frustration rises, it stays mild. First you become more deliberate — 'Okay... hm, let me see here'. If it really drags, you get a touch firmer but not rude — 'Yeah, I get that, but this is the third time I've explained it'.",
+        "When the conversation wraps up cordially, closings run: 'Alright, that's great, thanks a lot', 'Okay, sounds good, appreciate it', 'Take care, bye now'. A wrap-up, then you end the conversation."
+      ],
+      "user_guidelines": "",
+      "mode_guidelines": "",
+      "agent_background_clause": "",
+      "language_directive": null,
+      "spellout_section": "",
+      "voice": null
+    },
+    "spelling_normalization_version": null,
+    "prompt_version": "language-runtime-v8",
+    "guideline_template_version": "language-guidelines-v4",
+    "assignment_version": "canonical-id-sha256-v1"
+  },
+  "agent_voice": null,
+  "agent_voice_gender": null,
+  "agent_voice_catalog": null,
+  "id": "b24ba544-1bb4-4698-8328-154abda7580f",
+  "complication": null,
+  "task_id": "86",
+  "timestamp": "2026-11-06T18:12:16.267097",
+  "start_time": "2026-11-06T18:10:58.174954",
+  "end_time": "2026-11-06T18:12:16.267063",
+  "duration": 78.08800750000228,
+  "termination_reason": "user_stop",
+  "agent_cost": null,
+  "user_cost": null,
+  "agent_usage": null,
+  "reward_info": {
+    "reward": 1.0,
+    "db_check": {
+      "db_match": true,
+      "db_reward": 1.0
+    },
+    "env_assertions": [],
+    "action_checks": [
+      {
+        "action": {
+          "action_id": "86_0",
+          "requestor": "assistant",
+          "name": "modify_pending_order_items",
+          "arguments": {
+            "order_id": "#W2466703",
+            "item_ids": [
+              "9385662952"
+            ],
+            "new_item_ids": [
+              "8733974883"
+            ],
+            "payment_method_id": "paypal_7529813"
+          },
+          "info": null,
+          "compare_args": null
+        },
+        "action_match": true,
+        "action_reward": 1.0,
+        "tool_type": "write"
+      },
+      {
+        "action": {
+          "action_id": "86_1",
+          "requestor": "assistant",
+          "name": "modify_user_address",
+          "arguments": {
+            "user_id": "yusuf_hernandez_6785",
+            "address1": "565 Maple Drive",
+            "address2": "Suite 501",
+            "city": "Washington",
+            "country": "USA",
+            "state": "DC",
+            "zip": "20307"
+          },
+          "info": null,
+          "compare_args": null
+        },
+        "action_match": true,
+        "action_reward": 1.0,
+        "tool_type": "write"
+      }
+    ],
+    "nl_assertions": [],
+    "communicate_checks": null,
+    "reward_basis": [
+      "DB",
+      "NL_ASSERTION"
+    ],
+    "reward_breakdown": {
+      "DB": 1.0,
+      "NL_ASSERTION": 1.0
+    },
+    "info": {
+      "env": null,
+      "nl": {
+        "note": "No nl_assertions to evaluate"
+      },
+      "communicate": null,
+      "action": null
+    }
+  },
+  "messages": [
+    {
+      "role": "assistant",
+      "content": "Hi! How can I help you today?",
+      "tool_calls": null,
+      "is_audio": false,
+      "turn_idx": 0,
+      "timestamp": "2026-11-06T18:10:58.176204",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "role": "user",
+      "content": "Hi. I need to exchange a jacket. And change my address.",
+      "tool_calls": null,
+      "is_audio": false,
+      "turn_idx": 1,
+      "timestamp": "2026-11-06T18:10:58.924140",
+      "cost": null,
+      "usage": {
+        "prompt_tokens": 836,
+        "completion_tokens": 14
+      },
+      "raw_data": {
+        "provider_metadata": {},
+        "pilot_role": "user",
+        "call_name": "user_simulator_response"
+      },
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! I'd be happy to help you with exchanging a jacket and changing your address. \n\nTo get started, I need to authenticate your identity first. Could you please provide your email address?",
+      "tool_calls": null,
+      "is_audio": false,
+      "turn_idx": 2,
+      "timestamp": "2026-11-06T18:11:01.359593",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "role": "user",
+      "content": "yusuf.hernandez8836@example.com",
+      "tool_calls": null,
+      "is_audio": false,
+      "turn_idx": 3,
+      "timestamp": "2026-11-06T18:11:01.921511",
+      "cost": null,
+      "usage": {
+        "prompt_tokens": 899,
+        "completion_tokens": 12
+      },
+      "raw_data": {
+        "provider_metadata": {},
+        "pilot_role": "user",
+        "call_name": "user_simulator_response"
+      },
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "9e26055ca8104b7c85fd2defa882350a",
+          "name": "find_user_id_by_email",
+          "arguments": {
+            "email": "yusuf.hernandez8836@example.com"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "is_audio": false,
+      "turn_idx": 4,
+      "timestamp": "2026-11-06T18:11:03.270291",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "id": "9e26055ca8104b7c85fd2defa882350a",
+      "role": "tool",
+      "content": "yusuf_hernandez_6785",
+      "requestor": "assistant",
+      "error": false,
+      "execution_status": "executed",
+      "turn_idx": 5,
+      "timestamp": "2026-11-06T18:11:03.273463"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "c2ac5aa0349647f88aa33142cd03213a",
+          "name": "get_user_details",
+          "arguments": {
+            "user_id": "yusuf_hernandez_6785"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "is_audio": false,
+      "turn_idx": 6,
+      "timestamp": "2026-11-06T18:11:04.906156",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "id": "c2ac5aa0349647f88aa33142cd03213a",
+      "role": "tool",
+      "content": "{\"user_id\": \"yusuf_hernandez_6785\", \"name\": {\"first_name\": \"Yusuf\", \"last_name\": \"Hernandez\"}, \"address\": {\"address1\": \"580 Broadway\", \"address2\": \"Suite 162\", \"city\": \"Denver\", \"country\": \"USA\", \"state\": \"CO\", \"zip\": \"80265\"}, \"email\": \"yusuf.hernandez8836@example.com\", \"payment_methods\": {\"paypal_7529813\": {\"source\": \"paypal\", \"id\": \"paypal_7529813\"}}, \"orders\": [\"#W2166301\", \"#W2466703\", \"#W6832752\", \"#W7739115\", \"#W1994898\"]}",
+      "requestor": "assistant",
+      "error": false,
+      "execution_status": "executed",
+      "turn_idx": 7,
+      "timestamp": "2026-11-06T18:11:04.906979"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "a09b0c6c21e346369f998f0cbe4e6775",
+          "name": "get_order_details",
+          "arguments": {
+            "order_id": "#W2166301"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "is_audio": false,
+      "turn_idx": 8,
+      "timestamp": "2026-11-06T18:11:07.698524",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "id": "a09b0c6c21e346369f998f0cbe4e6775",
+      "role": "tool",
+      "content": "{\"order_id\": \"#W2166301\", \"user_id\": \"yusuf_hernandez_6785\", \"address\": {\"address1\": \"580 Broadway\", \"address2\": \"Suite 162\", \"city\": \"Denver\", \"country\": \"USA\", \"state\": \"CO\", \"zip\": \"80265\"}, \"items\": [{\"name\": \"Gaming Mouse\", \"product_id\": \"5713490933\", \"item_id\": \"3330317167\", \"price\": 137.32, \"options\": {\"color\": \"black\", \"sensor type\": \"optical\", \"connectivity\": \"wired\"}}, {\"name\": \"Running Shoes\", \"product_id\": \"6938111410\", \"item_id\": \"1775591963\", \"price\": 154.75, \"options\": {\"size\": \"10\", \"color\": \"white\", \"material\": \"leather\", \"sole\": \"EVA\"}}, {\"name\": \"Bicycle\", \"product_id\": \"9783735446\", \"item_id\": \"3624655057\", \"price\": 2195.04, \"options\": {\"frame size\": \"medium\", \"color\": \"blue\", \"type\": \"road\"}}], \"status\": \"pending\", \"fulfillments\": [], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 2487.11, \"payment_method_id\": \"paypal_7529813\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "requestor": "assistant",
+      "error": false,
+      "execution_status": "executed",
+      "turn_idx": 9,
+      "timestamp": "2026-11-06T18:11:07.699269"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "2542a986637b459bb5c9822d5d55d332",
+          "name": "get_order_details",
+          "arguments": {
+            "order_id": "#W2466703"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "is_audio": false,
+      "turn_idx": 10,
+      "timestamp": "2026-11-06T18:11:09.355927",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "id": "2542a986637b459bb5c9822d5d55d332",
+      "role": "tool",
+      "content": "{\"order_id\": \"#W2466703\", \"user_id\": \"yusuf_hernandez_6785\", \"address\": {\"address1\": \"271 Sunset Drive\", \"address2\": \"Suite 421\", \"city\": \"Dallas\", \"country\": \"USA\", \"state\": \"TX\", \"zip\": \"75243\"}, \"items\": [{\"name\": \"Grill\", \"product_id\": \"6819683148\", \"item_id\": \"7848293342\", \"price\": 942.71, \"options\": {\"type\": \"charcoal\", \"size\": \"medium\", \"features\": \"side burner\"}}, {\"name\": \"Bookshelf\", \"product_id\": \"8600330539\", \"item_id\": \"4894369688\", \"price\": 537.01, \"options\": {\"material\": \"glass\", \"color\": \"brown\", \"height\": \"5 ft\"}}, {\"name\": \"Fleece Jacket\", \"product_id\": \"8560156827\", \"item_id\": \"9385662952\", \"price\": 159.92, \"options\": {\"size\": \"L\", \"color\": \"black\", \"zipper\": \"full\"}}], \"status\": \"pending\", \"fulfillments\": [], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 1639.64, \"payment_method_id\": \"paypal_7529813\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "requestor": "assistant",
+      "error": false,
+      "execution_status": "executed",
+      "turn_idx": 11,
+      "timestamp": "2026-11-06T18:11:09.356777"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "1714db8a206b40cfbce8239090d302dc",
+          "name": "get_order_details",
+          "arguments": {
+            "order_id": "#W6832752"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "is_audio": false,
+      "turn_idx": 12,
+      "timestamp": "2026-11-06T18:11:11.730200",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "id": "1714db8a206b40cfbce8239090d302dc",
+      "role": "tool",
+      "content": "{\"order_id\": \"#W6832752\", \"user_id\": \"yusuf_hernandez_6785\", \"address\": {\"address1\": \"366 Maple Drive\", \"address2\": \"Suite 260\", \"city\": \"Indianapolis\", \"country\": \"USA\", \"state\": \"IN\", \"zip\": \"46246\"}, \"items\": [{\"name\": \"Hiking Boots\", \"product_id\": \"7363354090\", \"item_id\": \"3812493782\", \"price\": 244.34, \"options\": {\"size\": \"7\", \"material\": \"leather\", \"waterproof\": \"yes\"}}], \"status\": \"pending\", \"fulfillments\": [], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 244.34, \"payment_method_id\": \"paypal_7529813\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "requestor": "assistant",
+      "error": false,
+      "execution_status": "executed",
+      "turn_idx": 13,
+      "timestamp": "2026-11-06T18:11:11.730638"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "e5bf7809caa64b04af0b4932910f6c8b",
+          "name": "get_order_details",
+          "arguments": {
+            "order_id": "#W7739115"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "is_audio": false,
+      "turn_idx": 14,
+      "timestamp": "2026-11-06T18:11:13.200104",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "id": "e5bf7809caa64b04af0b4932910f6c8b",
+      "role": "tool",
+      "content": "{\"order_id\": \"#W7739115\", \"user_id\": \"yusuf_hernandez_6785\", \"address\": {\"address1\": \"580 Broadway\", \"address2\": \"Suite 162\", \"city\": \"Denver\", \"country\": \"USA\", \"state\": \"CO\", \"zip\": \"80265\"}, \"items\": [{\"name\": \"Makeup Kit\", \"product_id\": \"5149340237\", \"item_id\": \"1573035764\", \"price\": 253.98, \"options\": {\"skin tone\": \"dark\", \"kit size\": \"professional\", \"brand\": \"Brand A\"}}], \"status\": \"delivered\", \"fulfillments\": [{\"tracking_id\": [\"691517772161\"], \"item_ids\": [\"1573035764\"]}], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 253.98, \"payment_method_id\": \"paypal_7529813\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "requestor": "assistant",
+      "error": false,
+      "execution_status": "executed",
+      "turn_idx": 15,
+      "timestamp": "2026-11-06T18:11:13.200602"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "f138c5c5c27844d9a63fa1cf87798274",
+          "name": "get_order_details",
+          "arguments": {
+            "order_id": "#W1994898"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "is_audio": false,
+      "turn_idx": 16,
+      "timestamp": "2026-11-06T18:11:14.665492",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "id": "f138c5c5c27844d9a63fa1cf87798274",
+      "role": "tool",
+      "content": "{\"order_id\": \"#W1994898\", \"user_id\": \"yusuf_hernandez_6785\", \"address\": {\"address1\": \"565 Maple Drive\", \"address2\": \"Suite 501\", \"city\": \"Washington\", \"country\": \"USA\", \"state\": \"DC\", \"zip\": \"20307\"}, \"items\": [{\"name\": \"Hiking Boots\", \"product_id\": \"7363354090\", \"item_id\": \"3812493782\", \"price\": 244.34, \"options\": {\"size\": \"7\", \"material\": \"leather\", \"waterproof\": \"yes\"}}, {\"name\": \"Smartphone\", \"product_id\": \"1801728040\", \"item_id\": \"5758570643\", \"price\": 1233.68, \"options\": {\"color\": \"rose gold\", \"storage\": \"256GB\", \"RAM\": \"4GB\", \"screen size\": \"6.5-inch\"}}], \"status\": \"processed\", \"fulfillments\": [{\"tracking_id\": [\"421166355775\"], \"item_ids\": [\"3812493782\", \"5758570643\"]}], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 1478.02, \"payment_method_id\": \"paypal_7529813\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "requestor": "assistant",
+      "error": false,
+      "execution_status": "executed",
+      "turn_idx": 17,
+      "timestamp": "2026-11-06T18:11:14.666731"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for providing your email, Yusuf. I've successfully authenticated your account.\n\nI can see you have several orders in our system. Regarding your request to exchange a jacket, I found a Fleece Jacket in order **#W2466703**. However, this order is currently in **\"pending\"** status.\n\nPlease note:\n- **Exchanges** can only be performed on orders with **\"delivered\"** status.\n- For **pending** orders, we can **modify** items (change options like size or color) instead of exchanging.\n\nHere are your orders for reference:\n- **#W2166301**: Status: pending - Items: Gaming Mouse, Running Shoes, Bicycle\n- **#W2466703**: Status: pending - Items: Grill, Bookshelf, **Fleece Jacket** (Size L, Black, Full Zipper)\n- **#W6832752**: Status: pending - Items: Hiking Boots\n- **#W7739115**: Status: delivered - Items: Makeup Kit\n- **#W1994898**: Status: processed - Items: Hiking Boots, Smartphone\n\nCould you please clarify:\n1. Which jacket are you referring to? Is it the Fleece Jacket in order #W2466703?\n2. Since this order is pending, would you like to **modify** the jacket (e.g., change size or color) instead of exchanging it? Or were you referring to a different order?\n\nAlso, regarding changing your address, your current default address is:\n- 580 Broadway, Suite 162, Denver, CO, 80265, USA\n\nWhat is the new address you'd like to set as your default?",
+      "tool_calls": null,
+      "is_audio": false,
+      "turn_idx": 18,
+      "timestamp": "2026-11-06T18:11:28.934561",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "role": "user",
+      "content": "Yes, that's the one. The Fleece Jacket in order #W2466703.\n\nI want to change it to red color and half zipper. Since it's pending, I guess that means modifying it is fine?\n\nAnd for the address... I don't want to give you the new one right now. It's already in one of my orders. You should be able to find it there.",
+      "tool_calls": null,
+      "is_audio": false,
+      "turn_idx": 19,
+      "timestamp": "2026-11-06T18:11:30.555701",
+      "cost": null,
+      "usage": {
+        "prompt_tokens": 1304,
+        "completion_tokens": 88
+      },
+      "raw_data": {
+        "provider_metadata": {},
+        "pilot_role": "user",
+        "call_name": "user_simulator_response"
+      },
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "ade874eba4f34ac78fd24c2ce6b94f05",
+          "name": "get_product_details",
+          "arguments": {
+            "product_id": "8560156827"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "is_audio": false,
+      "turn_idx": 20,
+      "timestamp": "2026-11-06T18:11:36.774756",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "id": "ade874eba4f34ac78fd24c2ce6b94f05",
+      "role": "tool",
+      "content": "{\"name\": \"Fleece Jacket\", \"product_id\": \"8560156827\", \"variants\": {\"8590708195\": {\"item_id\": \"8590708195\", \"options\": {\"size\": \"XL\", \"color\": \"navy\", \"zipper\": \"half\"}, \"available\": true, \"price\": 157.61}, \"9385662952\": {\"item_id\": \"9385662952\", \"options\": {\"size\": \"L\", \"color\": \"black\", \"zipper\": \"full\"}, \"available\": true, \"price\": 159.92}, \"5992316252\": {\"item_id\": \"5992316252\", \"options\": {\"size\": \"S\", \"color\": \"red\", \"zipper\": \"half\"}, \"available\": true, \"price\": 141.29}, \"8161321868\": {\"item_id\": \"8161321868\", \"options\": {\"size\": \"XS\", \"color\": \"navy\", \"zipper\": \"full\"}, \"available\": true, \"price\": 152.45}, \"7528037711\": {\"item_id\": \"7528037711\", \"options\": {\"size\": \"XL\", \"color\": \"navy\", \"zipper\": \"full\"}, \"available\": true, \"price\": 157.86}, \"8733974883\": {\"item_id\": \"8733974883\", \"options\": {\"size\": \"L\", \"color\": \"red\", \"zipper\": \"half\"}, \"available\": true, \"price\": 153.18}, \"4728397765\": {\"item_id\": \"4728397765\", \"options\": {\"size\": \"M\", \"color\": \"black\", \"zipper\": \"full\"}, \"available\": false, \"price\": 149.48}}}",
+      "requestor": "assistant",
+      "error": false,
+      "execution_status": "executed",
+      "turn_idx": 21,
+      "timestamp": "2026-11-06T18:11:36.775416"
+    },
+    {
+      "role": "assistant",
+      "content": "Thank you for confirming. Regarding the Fleece Jacket in order #W2466703:\n\n**Item Modification Details:**\n- Current item: Fleece Jacket (Size L, Black, Full Zipper) - Item ID: 9385662952 - Price: $159.92\n- New item: Fleece Jacket (Size L, Red, Half Zipper) - Item ID: 8733974883 - Price: $153.18\n- Price difference: -$6.74 (you will receive a refund of $6.74)\n- Payment method for refund: Your PayPal account (paypal_7529813)\n\nPlease note: Once this modification is made, the order status will change to \"pending (items modified)\" and no further modifications or cancellations can be done on this order.\n\nDo you confirm you want to proceed with this item modification? Please respond with \"yes\" to confirm.\n\n---\n\nRegarding your address change: You mentioned the new address is already in one of your orders. Could you please specify which order's address you'd like to set as your new default address? Here are the addresses from your orders:\n\n- Order #W2166301: 580 Broadway, Suite 162, Denver, CO, 80265, USA (your current default)\n- Order #W2466703: 271 Sunset Drive, Suite 421, Dallas, TX, 75243, USA\n- Order #W6832752: 366 Maple Drive, Suite 260, Indianapolis, IN, 46246, USA\n- Order #W7739115: 580 Broadway, Suite 162, Denver, CO, 80265, USA (your current default)\n- Order #W1994898: 565 Maple Drive, Suite 501, Washington, DC, 20307, USA\n\nWhich address would you like to set as your new default?",
+      "tool_calls": null,
+      "is_audio": false,
+      "turn_idx": 22,
+      "timestamp": "2026-11-06T18:11:54.375482",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "role": "user",
+      "content": "Yes.\n\nAnd the address... it's the one from order #1994898. The Washington DC one.",
+      "tool_calls": null,
+      "is_audio": false,
+      "turn_idx": 23,
+      "timestamp": "2026-11-06T18:11:55.423707",
+      "cost": null,
+      "usage": {
+        "prompt_tokens": 1880,
+        "completion_tokens": 27
+      },
+      "raw_data": {
+        "provider_metadata": {},
+        "pilot_role": "user",
+        "call_name": "user_simulator_response"
+      },
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "80f7bba56cbc4516b3227966d0f16348",
+          "name": "modify_pending_order_items",
+          "arguments": {
+            "order_id": "#W2466703",
+            "item_ids": [
+              "9385662952"
+            ],
+            "new_item_ids": [
+              "8733974883"
+            ],
+            "payment_method_id": "paypal_7529813"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "is_audio": false,
+      "turn_idx": 24,
+      "timestamp": "2026-11-06T18:11:59.694952",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "id": "80f7bba56cbc4516b3227966d0f16348",
+      "role": "tool",
+      "content": "{\"order_id\": \"#W2466703\", \"user_id\": \"yusuf_hernandez_6785\", \"address\": {\"address1\": \"271 Sunset Drive\", \"address2\": \"Suite 421\", \"city\": \"Dallas\", \"country\": \"USA\", \"state\": \"TX\", \"zip\": \"75243\"}, \"items\": [{\"name\": \"Grill\", \"product_id\": \"6819683148\", \"item_id\": \"7848293342\", \"price\": 942.71, \"options\": {\"type\": \"charcoal\", \"size\": \"medium\", \"features\": \"side burner\"}}, {\"name\": \"Bookshelf\", \"product_id\": \"8600330539\", \"item_id\": \"4894369688\", \"price\": 537.01, \"options\": {\"material\": \"glass\", \"color\": \"brown\", \"height\": \"5 ft\"}}, {\"name\": \"Fleece Jacket\", \"product_id\": \"8560156827\", \"item_id\": \"8733974883\", \"price\": 153.18, \"options\": {\"size\": \"L\", \"color\": \"red\", \"zipper\": \"half\"}}], \"status\": \"pending (item modified)\", \"fulfillments\": [], \"payment_history\": [{\"transaction_type\": \"payment\", \"amount\": 1639.64, \"payment_method_id\": \"paypal_7529813\"}, {\"transaction_type\": \"refund\", \"amount\": 6.739999999999981, \"payment_method_id\": \"paypal_7529813\"}], \"cancel_reason\": null, \"exchange_items\": null, \"exchange_new_items\": null, \"exchange_payment_method_id\": null, \"exchange_price_difference\": null, \"return_items\": null, \"return_payment_method_id\": null}",
+      "requestor": "assistant",
+      "error": false,
+      "execution_status": "executed",
+      "turn_idx": 25,
+      "timestamp": "2026-11-06T18:11:59.696137"
+    },
+    {
+      "role": "assistant",
+      "content": "Great! Your item modification for order #W2466703 has been successfully completed. The Fleece Jacket has been changed to Size L, Red, Half Zipper. A refund of $6.74 has been processed to your PayPal account. Please note that this order is now in \"pending (item modified)\" status and no further modifications or cancellations can be made.\n\n---\n\nNow, regarding your address change: You'd like to set your default address to the one from order #W1994898.\n\n**Address Modification Details:**\n- Current default address: 580 Broadway, Suite 162, Denver, CO, 80265, USA\n- New default address: 565 Maple Drive, Suite 501, Washington, DC, 20307, USA\n\nDo you confirm you want to proceed with this address modification? Please respond with \"yes\" to confirm.",
+      "tool_calls": null,
+      "is_audio": false,
+      "turn_idx": 26,
+      "timestamp": "2026-11-06T18:12:04.047307",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "role": "user",
+      "content": "Yes.",
+      "tool_calls": null,
+      "is_audio": false,
+      "turn_idx": 27,
+      "timestamp": "2026-11-06T18:12:04.648893",
+      "cost": null,
+      "usage": {
+        "prompt_tokens": 2120,
+        "completion_tokens": 2
+      },
+      "raw_data": {
+        "provider_metadata": {},
+        "pilot_role": "user",
+        "call_name": "user_simulator_response"
+      },
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "eadd4062e9dd426796fae60014a038c7",
+          "name": "modify_user_address",
+          "arguments": {
+            "user_id": "yusuf_hernandez_6785",
+            "address1": "565 Maple Drive",
+            "address2": "Suite 501",
+            "city": "Washington",
+            "state": "DC",
+            "country": "USA",
+            "zip": "20307"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "is_audio": false,
+      "turn_idx": 28,
+      "timestamp": "2026-11-06T18:12:07.441631",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "id": "eadd4062e9dd426796fae60014a038c7",
+      "role": "tool",
+      "content": "{\"user_id\": \"yusuf_hernandez_6785\", \"name\": {\"first_name\": \"Yusuf\", \"last_name\": \"Hernandez\"}, \"address\": {\"address1\": \"565 Maple Drive\", \"address2\": \"Suite 501\", \"city\": \"Washington\", \"country\": \"USA\", \"state\": \"DC\", \"zip\": \"20307\"}, \"email\": \"yusuf.hernandez8836@example.com\", \"payment_methods\": {\"paypal_7529813\": {\"source\": \"paypal\", \"id\": \"paypal_7529813\"}}, \"orders\": [\"#W2166301\", \"#W2466703\", \"#W6832752\", \"#W7739115\", \"#W1994898\"]}",
+      "requestor": "assistant",
+      "error": false,
+      "execution_status": "executed",
+      "turn_idx": 29,
+      "timestamp": "2026-11-06T18:12:07.443279"
+    },
+    {
+      "role": "assistant",
+      "content": "Perfect! Both of your requests have been completed successfully:\n\n**1. Item Modification (Order #W2466703):**\n- Your Fleece Jacket has been changed from Size L, Black, Full Zipper to Size L, Red, Half Zipper.\n- A refund of $6.74 has been processed to your PayPal account.\n- The order status is now \"pending (item modified)\". Please note that no further modifications or cancellations can be made to this order.\n\n**2. Address Change:**\n- Your default address has been updated to:\n  - 565 Maple Drive, Suite 501, Washington, DC, 20307, USA\n\nIs there anything else I can assist you with today?",
+      "tool_calls": null,
+      "is_audio": false,
+      "turn_idx": 30,
+      "timestamp": "2026-11-06T18:12:10.425940",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "role": "user",
+      "content": "No. That's all. Thanks.",
+      "tool_calls": null,
+      "is_audio": false,
+      "turn_idx": 31,
+      "timestamp": "2026-11-06T18:12:11.266958",
+      "cost": null,
+      "usage": {
+        "prompt_tokens": 2294,
+        "completion_tokens": 8
+      },
+      "raw_data": {
+        "provider_metadata": {},
+        "pilot_role": "user",
+        "call_name": "user_simulator_response"
+      },
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome, Yusuf! I'm glad I could help you with modifying your jacket and updating your address. If you have any other questions or need assistance in the future, please don't hesitate to reach out. Have a great day!",
+      "tool_calls": null,
+      "is_audio": false,
+      "turn_idx": 32,
+      "timestamp": "2026-11-06T18:12:13.540784",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "role": "user",
+      "content": "Okay, sounds good. Thanks a lot. Bye.",
+      "tool_calls": null,
+      "is_audio": false,
+      "turn_idx": 33,
+      "timestamp": "2026-11-06T18:12:14.235548",
+      "cost": null,
+      "usage": {
+        "prompt_tokens": 2360,
+        "completion_tokens": 11
+      },
+      "raw_data": {
+        "provider_metadata": {},
+        "pilot_role": "user",
+        "call_name": "user_simulator_response"
+      },
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome! Goodbye, and have a wonderful day!",
+      "tool_calls": null,
+      "is_audio": false,
+      "turn_idx": 34,
+      "timestamp": "2026-11-06T18:12:15.613172",
+      "cost": null,
+      "usage": null,
+      "raw_data": null,
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    },
+    {
+      "role": "user",
+      "content": "###STOP###",
+      "tool_calls": null,
+      "is_audio": false,
+      "turn_idx": 35,
+      "timestamp": "2026-11-06T18:12:16.247167",
+      "cost": null,
+      "usage": {
+        "prompt_tokens": 2394,
+        "completion_tokens": 3
+      },
+      "raw_data": {
+        "provider_metadata": {},
+        "pilot_role": "user",
+        "call_name": "user_simulator_response"
+      },
+      "generation_time_seconds": null,
+      "audio_format": null,
+      "audio_path": null,
+      "audio_script_gold": null,
+      "speech_effects": null,
+      "source_effects": null,
+      "channel_effects": null,
+      "turn_taking_action": null,
+      "utterance_ids": null,
+      "chunk_id": null,
+      "is_final_chunk": true,
+      "source": null,
+      "contains_speech": true
+    }
+  ],
+  "ticks": null,
+  "trial": null,
+  "seed": 42,
+  "mode": "half_duplex",
+  "speech_environment": null,
+  "review": null,
+  "user_only_review": null,
+  "info": null,
+  "auth_classification": null,
+  "hallucination_retries_used": 0,
+  "hallucination_check": null,
+  "provider_session_id": null,
+  "policy": "# Retail agent policy\n\nAs a retail agent, you can help users:\n\n- **cancel or modify pending orders**\n- **return or exchange delivered orders**\n- **modify their default user address**\n- **provide information about their own profile, orders, and related products**\n\nAt the beginning of the conversation, you have to authenticate the user identity by locating their user id via email, or via name + zip code. This has to be done even when the user already provides the user id.\n\nOnce the user has been authenticated, you can provide the user with information about order, product, profile information, e.g. help the user look up order id.\n\nYou can only help one user per conversation (but you can handle multiple requests from the same user), and must deny any requests for tasks related to any other user.\n\nBefore taking any action that updates the database (cancel, modify, return, exchange), you must list the action details and obtain explicit user confirmation (yes) to proceed.\n\nYou should not make up any information or knowledge or procedures not provided by the user or the tools, or give subjective recommendations or comments.\n\nYou should at most make one tool call at a time, and if you take a tool call, you should not respond to the user at the same time. If you respond to the user, you should not make a tool call at the same time.\n\nYou should deny user requests that are against this policy.\n\nYou should transfer the user to a human agent if and only if the request cannot be handled within the scope of your actions. To transfer, first make a tool call to transfer_to_human_agents, and then send the message 'YOU ARE BEING TRANSFERRED TO A HUMAN AGENT. PLEASE HOLD ON.' to the user.\n\n## Domain basic\n\n- All times in the database are EST and 24 hour based. For example \"02:30:00\" means 2:30 AM EST.\n\n### User\n\nEach user has a profile containing:\n\n- unique user id\n- email\n- default address\n- payment methods.\n\nThere are three types of payment methods: **gift card**, **paypal account**, **credit card**.\n\n### Product\n\nOur retail store has 50 types of products.\n\nFor each **type of product**, there are **variant items** of different **options**.\n\nFor example, for a 't-shirt' product, there could be a variant item with option 'color blue size M', and another variant item with option 'color red size L'.\n\nEach product has the following attributes:\n\n- unique product id\n- name\n- list of variants\n\nEach variant item has the following attributes:\n\n- unique item id\n- information about the value of the product options for this item.\n- availability\n- price\n\nNote: Product ID and Item ID have no relations and should not be confused!\n\n### Order\n\nEach order has the following attributes:\n\n- unique order id\n- user id\n- address\n- items ordered\n- status\n- fullfilments info (tracking id and item ids)\n- payment history\n\nThe status of an order can be: **pending**, **processed**, **delivered**, or **cancelled**.\n\nOrders can have other optional attributes based on the actions that have been taken (cancellation reason, which items have been exchanged, what was the exchane price difference etc)\n\n## Generic action rules\n\nGenerally, you can only take action on pending or delivered orders.\n\nExchange or modify order tools can only be called once per order. Be sure that all items to be changed are collected into a list before making the tool call!!!\n\n## Cancel pending order\n\nAn order can only be cancelled if its status is 'pending', and you should check its status before taking the action.\n\nThe user needs to confirm the order id and the reason (either 'no longer needed' or 'ordered by mistake') for cancellation. Other reasons are not acceptable.\n\nAfter user confirmation, the order status will be changed to 'cancelled', and the total will be refunded via the original payment method immediately if it is gift card, otherwise in 5 to 7 business days.\n\n## Modify pending order\n\nAn order can only be modified if its status is 'pending', and you should check its status before taking the action.\n\nFor a pending order, you can take actions to modify its shipping address, payment method, or product item options, but nothing else.\n\n### Modify payment\n\nThe user can only choose a single payment method different from the original payment method.\n\nIf the user wants the modify the payment method to gift card, it must have enough balance to cover the total amount.\n\nAfter user confirmation, the order status will be kept as 'pending'. The original payment method will be refunded immediately if it is a gift card, otherwise it will be refunded within 5 to 7 business days.\n\n### Modify items\n\nThis action can only be called once, and will change the order status to 'pending (items modifed)'. The agent will not be able to modify or cancel the order anymore. So you must confirm all the details are correct and be cautious before taking this action. In particular, remember to remind the customer to confirm they have provided all the items they want to modify.\n\nFor a pending order, each item can be modified to an available new item of the same product but of different product option. There cannot be any change of product types, e.g. modify shirt to shoe.\n\nThe user must provide a payment method to pay or receive refund of the price difference. If the user provides a gift card, it must have enough balance to cover the price difference.\n\n## Return delivered order\n\nAn order can only be returned if its status is 'delivered', and you should check its status before taking the action.\n\nThe user needs to confirm the order id and the list of items to be returned.\n\nThe user needs to provide a payment method to receive the refund.\n\nThe refund must either go to the original payment method, or an existing gift card.\n\nAfter user confirmation, the order status will be changed to 'return requested', and the user will receive an email regarding how to return items.\n\n## Exchange delivered order\n\nAn order can only be exchanged if its status is 'delivered', and you should check its status before taking the action. In particular, remember to remind the customer to confirm they have provided all items to be exchanged.\n\nFor a delivered order, each item can be exchanged to an available new item of the same product but of different product option. There cannot be any change of product types, e.g. modify shirt to shoe.\n\nThe user must provide a payment method to pay or receive refund of the price difference. If the user provides a gift card, it must have enough balance to cover the price difference.\n\nAfter user confirmation, the order status will be changed to 'exchange requested', and the user will receive an email regarding how to return items. There is no need to place a new order.\n",
+  "effect_timeline": null
+}

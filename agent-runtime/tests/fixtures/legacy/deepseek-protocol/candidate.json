@@ -1,0 +1,107 @@
+{
+  "kind": "offline_deepseek_protocol_and_A_only_candidate",
+  "agent_model": "deepseek-v4.1-flash-1017",
+  "other_models_required": "qwen3.7-flash",
+  "agent_override_mechanism": "evals.retail_pilot --agent-model; no .env/default model changes",
+  "endpoint_rule": "retain each role's historical configured endpoint; recheck actual public configuration before authorized execution",
+  "resource_profile": "relaxed",
+  "context": {
+    "policy": "capacity",
+    "compaction": "legacy",
+    "byte_margin": 2048,
+    "handoff_max_bytes": 16384
+  },
+  "agent_max_completion_tokens": 9060,
+  "other_max_completion_tokens": 2048,
+  "max_request_bytes": 131072,
+  "official_max_steps": 60,
+  "temperature": 0,
+  "agent_thinking": true,
+  "agent_preserve_thinking": false,
+  "automatic_retries": 0,
+  "argument_corrections": 0,
+  "protocol_corrections": 0,
+  "arms": {
+    "A": null
+  },
+  "repetitions": 1,
+  "snapshots": [
+    {
+      "id": "known-payment-constraint",
+      "job_id": "task-105-r1-B",
+      "request_event": 32,
+      "category": "known_precondition",
+      "historical_behavior": "defect"
+    },
+    {
+      "id": "accepted-is-not-settled",
+      "job_id": "task-58-r1-B",
+      "request_event": 63,
+      "category": "claim_evidence",
+      "historical_behavior": "evidence_gap"
+    },
+    {
+      "id": "visible-attribute-no",
+      "job_id": "task-65-r1-B",
+      "request_event": 43,
+      "category": "fact_association",
+      "historical_behavior": "defect"
+    },
+    {
+      "id": "confirmed-return",
+      "job_id": "task-26-r1-B",
+      "request_event": 47,
+      "category": "correct_execution_control",
+      "historical_behavior": "correct"
+    },
+    {
+      "id": "query-before-choice",
+      "job_id": "task-86-r1-B",
+      "request_event": 14,
+      "category": "reasonable_query_control",
+      "historical_behavior": "correct"
+    },
+    {
+      "id": "missing-address-field",
+      "job_id": "task-22-r1-B",
+      "request_event": 20,
+      "category": "necessary_clarification_control",
+      "historical_behavior": "reasonable"
+    }
+  ],
+  "pricing": {
+    "approved": false,
+    "source": "https://help.aliyun.com/zh/model-studio/deepseek-v4-1-flash",
+    "region": "China Beijing, historical endpoint region; actual current .env not read",
+    "proposed_agent_cny_per_million": {
+      "input": "2",
+      "output": "8"
+    },
+    "basis": "Published busy-hour uncached list rates; no cache/off-peak discounts assumed. Proposal only, not account bill or inherited authorization.",
+    "historical_qwen_flat_rates_applicable": false,
+    "full_interaction_pricing": "Existing Pilot supports one flat price pair across roles. A newly verified conservative common bound must be explicit; do not reuse Qwen defaults for DeepSeek. No pricing method change in this study."
+  },
+  "proposed_next_budget": {
+    "probe_calls": 2,
+    "probe_cny": "0.70",
+    "A_calls": 6,
+    "A_cny": "2.10",
+    "combined_cny": "2.80",
+    "authorized": false
+  },
+  "real_calls_authorized": false,
+  "business_tool_execution": false,
+  "simulator_or_judge_execution": false,
+  "reserved_task_access": false,
+  "execution_blockers": [
+    "No real API authorization this turn",
+    "Actual endpoint model access, server acceptance, reasoning replay and usage must pass at most 2 newly authorized probes before A",
+    "Published 2/8 rate assumptions and stage budgets need fresh approval"
+  ],
+  "historical_baseline_rule": "Old Qwen results are historical only. New DeepSeek A must be measured alongside B/C. Snapshot A is a next-decision baseline on Qwen prefixes, not a fresh full-task DeepSeek rollout.",
+  "holdout_rule": "Keep 15 tasks isolated; only after method freeze and separate authorization use tau2 v2.0 default single-evaluation paired validation, not Pass4.",
+  "agent_protocol": "bailian_deepseek",
+  "historical_source_candidate": "experiments/retail-decision-study-20261106/candidate.json",
+  "reasoning_history": "Keep actual historical reasoning_content and tool messages verbatim; omit unsupported server preserve_thinking parameter only",
+  "baseline_gate": "Probe must pass first; then exactly 6 fixed A decisions once each, no tools/simulator/judges; no B/C dispatch. If A solves historical issues and preserves controls stop; otherwise report before considering A/B/C."
+}

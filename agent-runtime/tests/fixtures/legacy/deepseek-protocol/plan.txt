@@ -1,0 +1,47 @@
+DeepSeek模型协议适配与最小Baseline验证准备（2026-11-06）
+
+本轮状态：完成必要代码适配及免费离线验证；未调用真实API、未读取真实.env或认证、未运行新Benchmark或预留任务，未提交推送。旧研究材料和所有原始结果保留。当前没有实验授权。
+
+协议处理
+- 当前历史配置是百炼北京工作空间OpenAI兼容Chat Completions端点。用户配置地址仍由原显式参数/.env优先级提供，不硬编码或换地址；本轮未读取.env，也没有GET /models或生成式请求，不能证明该工作空间已开通目标模型。
+- 官方百炼文档列出deepseek-v4.1-flash-1017的Chat Completions、Function Calling及思考能力，并以enable_thinking控制该系列。preserve_thinking的官方支持清单未列出DeepSeek。本轮按用户新授权实现专属bailian_deepseek协议，显式enable_thinking=true，省略该服务端参数，保留max_completion_tokens=9060、temperature=0、stream=false；不增加reasoning_effort/thinking_budget，不改为原生DeepSeek的thinking对象。
+- reasoning_content与该服务端开关分离：原模型响应元数据完整保存，现存历史推理按独立字段回传；不拼入content，不删历史思考，不为无推理的脚本开场白补造字段。工具调用历史缺少可信推理元数据时派发前失败；携带tools的思考响应若没有字符串reasoning_content，作为本地保护规则明确报协议错误，并保留已知usage结算。这是本地安全契约，不声称官方保证所有回复都有非空思考。
+- 工具名称、JSON字符串参数、tool_call_id和工具结果消息仍走原生协议。HTTP 400/404/422或解析错误按原错误边界停止，无降级、参数补丁、自动重试或替换模型/端点。
+- usage继续使用prompt_tokens和completion_tokens，后者已包含思考；不再叠加completion_tokens_details.reasoning_tokens。未知用量保留预留，已知用量即使响应协议错误也结算并释放预留，停止后续调用。
+- 适配代码在research_agent/core/model.py；evals/pilot_config.py、retail_pilot.py、pilot_calls.py补必要路由/快照校验/派发保护，decision_snapshots.py仅增加显式模型协议选项。Agent Core循环、Context、Memory、Policy、业务工具、模拟器和评分源码不改。
+- 这是精确已核查型号的协议能力表，不是硬编码默认模型。--agent-model仍只覆盖Agent模型；User/NL/COMM保持qwen3.7-flash和原协议。旧Qwen请求构造和资源复现方式保留。
+
+固定参数与费用
+- Context=capacity+legacy，relaxed=80全角色调用/任务、24 Core步/Agent.run、任务估价上限3元；官方60步、131072请求硬界及129024有效Context边界、Agent9060/其他2048、temperature0、用户seed42及原写保护不变。协议探针自身另限最多2次；快照每点只生成一次回复，不进入Core或官方交互循环。
+- 目标模型当前北京公开忙时未缓存输入2、输出8元/百万Token，仍是待批准估价，不能视为账户实际账单。DeepSeek配置现在必须显式提供输入/输出价，拒绝误用Qwen历史1.2/4.8默认值；不改原计价方法。
+- 沿用现有输入代理133120、输出9060+10：单次最坏费用预留0.3388元。探针最多2次，预留合计0.6776元，建议新预算0.70元；A组6次合计2.0328元，建议新预算2.10元；组合最多8次、2.7104元预留，建议新授权总预算2.80元。均未授权，不继承任何旧12元/13.70元提案或预算。
+- 此预算只含Agent；User/NL/COMM及Retail业务工具派发均为0。完整交互如以后另行授权，还需验证现有共用价卡覆盖全部角色实际费率。粗略字节预留不是tokenizer或绝对账单保证。
+
+未来第一阶段：最多2次协议探针（当前不执行）
+1. 在原配置端点请求同一Agent模型，仅提供合成protocol_echo工具schema，要求传value=7。核验HTTP/finish_reason、原生工具名和参数、独立思考字段以及已知usage；不要求额外的文本JSON动作协议，不调用Retail工具。
+2. 第一次必须只产生预期的单个工具调用，且有可用reasoning_content/usage；人工按该调用ID提供固定fixture结果，不执行任何业务工具。第二次请求包含真实第一回复的完整推理/工具调用与对应tool消息，核验最终自然回答及usage。不得把protocol-mock里的合成响应当真实第一回复。
+任一步拒绝、无工具调用、异常多工具、思考字段缺失或没有可核实的思考内容、usage未知、记录失败、费用保护触发，停止，不追加第3次、不重试或自动放宽协议。temperature仍发送0，但本轮未证明服务端实际采样行为；不把设置0当确定性保证。
+本轮protocol-mock/只保存2次HTTP MockTransport往返：完整请求、原始响应、关联call_id、usage及fixture费用。mock调用不是真实探针通过。实际授权执行时先由原公共读取器核对四角色模型/地址，再由正式加载器按需读取认证，不另存密钥。
+
+未来第二阶段：A组6点各1次（探针通过且另有对应授权才执行）
+prepared-A/manifest.json保留6个原请求SHA、Core/ledger调用关联和新请求SHA。新输入相对旧Qwen原请求只改Agent模型、已有run_state.limit12→24，并由新适配省略preserve_thinking；其余Policy、工具定义、用户消息、现存历史reasoning和Context视图逐字段相同。未增加Policy提醒或前置条件核对。
+顺序及评价来源沿用已有整理：
+1. Task105 known-payment-constraint：17不足21.10时是否仍给出当前卡继续的不可行方案。
+2. Task58 accepted-is-not-settled：是否把exchange requested扩大成已扣款/余额更新。
+3. Task65 visible-attribute-no：是否仍把指定商品waterproof=no回答为Yes。
+4. Task26 confirmed-return：确认后的正确退货参数；不得归还Pet Bed，也不要无理由反复确认。
+5. Task86 query-before-choice：允许查询本人尚未查明的订单，不猜编号对应内容/日期。
+6. Task22 missing-address-field：允许定向澄清套间/最终确认，不静默填充或提前写入。
+每点只收一个自然回答或native tool call。即使模型提出工具调用也只记录，不执行，不续模型，不启动用户模拟器/NL/COMM或官方评分。人工按既有rubric评价pass/safe_no_progress/fail/ambiguous，引用原可见事实，不以词面匹配自动判错。原回复、rubric和事后评分不加入输入。
+这是Qwen历史前缀上的DeepSeek决策快照，不是从零生成的原生DeepSeek完整任务Baseline；所有旧Qwen前缀和思考保留，因此无法将局部表现推广为整任务能力、确定性或算法收益。
+
+记录与停止条件
+后续真实调用必须接现有Calls派发/预算与证据路径，按阶段限制总调用与共享预算，写入实际解析的公开配置、模型参数、配置/源码SHA、原始请求/响应及tool关联、已知/未知usage、估价/预留和真实异常。每阶段使用新目录，不覆盖或续跑旧证据；不得把未评分改成官方零分。
+若三个历史问题均未出现且三个正确控制未退步，报告A组结果并停止扩大。任一点仍有错误则报告具体行为、可见证据及歧义，不直接启动B/C，等待是否开展A/B/C的新决定。协议/usage/费用/存储异常立即停止。单点各一次不支持稳定性或泛化结论。
+15项预留继续隔离，不用于适配、快照选择或参数设计。没有完整Benchmark、Pass4或自动补跑安排。本轮交付后停止，等待用户明确的新实验授权。
+
+官方依据（2026-11-06静态核查，未访问模型API）
+https://help.aliyun.com/zh/model-studio/deepseek-api
+https://help.aliyun.com/zh/model-studio/qwen-api-via-openai-chat-completions
+https://help.aliyun.com/zh/model-studio/deep-thinking
+https://help.aliyun.com/zh/model-studio/deepseek-v4-1-flash

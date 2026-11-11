@@ -1,0 +1,6 @@
+# These SQLite files are deterministic, read-only test inputs, not runtime
+# databases. The workspace-level `*.sqlite3*` ignore would otherwise hide them
+# and make the offline regression tests non-reproducible on a fresh clone.
+!*.sqlite3
+!*.sqlite3-shm
+!*.sqlite3-wal

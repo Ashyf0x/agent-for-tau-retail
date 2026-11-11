@@ -1,0 +1,49 @@
+{
+  "kind": "offline_environment_wiring",
+  "release": "v2.0.0",
+  "commit": "989d3285ae669e49503324bdb9981bf14fccedeb",
+  "benchmark": "text-v1",
+  "language": "en",
+  "domain": "retail",
+  "available_tasks": 50,
+  "official_tools": 16,
+  "fixture_tools": [
+    "find_user_id_by_email",
+    "get_user_details"
+  ],
+  "read_only_db_unchanged": true,
+  "agent_report": {
+    "run_id": "160dbc94de85498bbb38c7fc01fc7a1f",
+    "terminal": {
+      "kind": "run_end",
+      "run_id": "160dbc94de85498bbb38c7fc01fc7a1f",
+      "status": "completed",
+      "answer": "Your account email is noah.brown7922@example.com.",
+      "goal_status": "unverified",
+      "reason": null,
+      "steps": 3
+    },
+    "model_calls": 3,
+    "unknown_usage_calls": 3,
+    "unterminated_model_calls": [],
+    "known_input_tokens": 0,
+    "known_output_tokens": 0,
+    "automatic_retries": 0,
+    "argument_corrections": 0,
+    "protocol_corrections": 0,
+    "goal_assessment": "unverified"
+  },
+  "real_model_calls": 0,
+  "simulator_calls": 0,
+  "judge_calls": 0,
+  "official_score": null,
+  "scoring_run": false,
+  "unverified": [
+    "official user simulator",
+    "end-to-end official orchestration",
+    "DB reward",
+    "communication semantic judge",
+    "NL assertion judge"
+  ],
+  "note": "No scorer was replaced or removed; this is environment wiring evidence only."
+}

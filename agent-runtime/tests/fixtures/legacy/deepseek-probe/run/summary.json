@@ -1,0 +1,72 @@
+{
+  "mode": "authorized_real_protocol_probe",
+  "probe_passed": false,
+  "failure_type": "RuntimeError",
+  "failure_category": "local_probe_contract",
+  "failure_contract": "second_response_local_reasoning_or_usage_contract_failed",
+  "calls": 2,
+  "per_role": {
+    "agent": {
+      "calls": 2,
+      "input_tokens": 795,
+      "output_tokens": 112,
+      "unknown_usage": 0
+    },
+    "user": {
+      "calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "unknown_usage": 0
+    },
+    "communicate": {
+      "calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "unknown_usage": 0
+    },
+    "nl": {
+      "calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "unknown_usage": 0
+    }
+  },
+  "estimated_cny": "0.002486",
+  "unresolved_reservation_cny": "0",
+  "unknown_usage_call_ids": [],
+  "unterminated_call_ids": [],
+  "incomplete_last_line": false,
+  "cost_complete": true,
+  "absolute_bill_guaranteed": false,
+  "stopped": true,
+  "stop_reason": "RuntimeError",
+  "A_snapshots_executed": 0,
+  "A_snapshots_authorized": false,
+  "simulator_or_judge_calls": 0,
+  "business_tools_executed": 0,
+  "official_score": null,
+  "raw_response_diagnostics": [
+    {
+      "call_id": "cde69117c3264079a5b1b44088974587",
+      "http_status": 200,
+      "body_sha256": "b406c0718f7a35a6d63a682088ef6a0eecf5d411085b7263325c635c66ec15ec",
+      "native_tool_calls_present": true,
+      "reasoning_field_present": true,
+      "reasoning_type": "str",
+      "reasoning_nonempty": true,
+      "usage_present": true,
+      "reported_model": "deepseek-v4.1-flash-1017"
+    },
+    {
+      "call_id": "d34ff83b655f441e851f19ea54c4a8cb",
+      "http_status": 200,
+      "body_sha256": "accb0e2dfa40e54a02076ce1234807d793baa4a73388df7109009c680fa859ab",
+      "native_tool_calls_present": false,
+      "reasoning_field_present": true,
+      "reasoning_type": "str",
+      "reasoning_nonempty": false,
+      "usage_present": true,
+      "reported_model": "deepseek-v4.1-flash-1017"
+    }
+  ]
+}

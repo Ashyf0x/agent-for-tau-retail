@@ -1,0 +1,67 @@
+{
+  "id": "65",
+  "description": {
+    "purpose": null,
+    "relevant_policies": null,
+    "notes": null
+  },
+  "user_scenario": {
+    "persona": null,
+    "instructions": {
+      "domain": "retail",
+      "reason_for_call": "You want to exchange the bookshelf from your most recent order for a camera that is closest but not more expensive than the price of the bookshelf.",
+      "known_info": "You are James Kovacs from San Jose CA, 95190.\n\nName details:\nYour first name is James, and your last name is Kovacs. When asked for your full name, give your first name first and your last name second: James Kovacs.",
+      "unknown_info": "You do not remember your email address",
+      "task_instructions": "."
+    }
+  },
+  "ticket": null,
+  "initial_state": null,
+  "evaluation_criteria": {
+    "actions": [
+      {
+        "action_id": "65_0",
+        "requestor": "assistant",
+        "name": "find_user_id_by_name_zip",
+        "arguments": {
+          "first_name": "James",
+          "last_name": "Kovacs",
+          "zip": "95190"
+        },
+        "info": null,
+        "compare_args": null
+      },
+      {
+        "action_id": "65_1",
+        "requestor": "assistant",
+        "name": "get_user_details",
+        "arguments": {
+          "user_id": "james_kovacs_9247"
+        },
+        "info": null,
+        "compare_args": null
+      },
+      {
+        "action_id": "65_2",
+        "requestor": "assistant",
+        "name": "get_order_details",
+        "arguments": {
+          "order_id": "#W5362037"
+        },
+        "info": null,
+        "compare_args": null
+      }
+    ],
+    "env_assertions": null,
+    "communicate_info": [],
+    "nl_assertions": null,
+    "reward_basis": [
+      "DB",
+      "NL_ASSERTION"
+    ]
+  },
+  "issues": null,
+  "required_documents": null,
+  "user_tools": null,
+  "agent_opener": null
+}

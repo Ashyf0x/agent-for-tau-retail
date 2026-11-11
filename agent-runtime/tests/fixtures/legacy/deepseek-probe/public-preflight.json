@@ -1,0 +1,22 @@
+{
+  "configuration_matches_reviewed_stage": true,
+  "source_hashes_match": true,
+  "auth_loaded": false,
+  "requests_sent": 0,
+  "first_request_sha256": "2c2712e27ef9dc348980315e8c04c4f9ccee4f71f964c0e1a6dec48efb049261",
+  "first_request_bytes": 716,
+  "first_tool_choice": {
+    "type": "function",
+    "function": {
+      "name": "protocol_echo"
+    }
+  },
+  "models": {
+    "agent": "deepseek-v4.1-flash-1017",
+    "user": "qwen3.7-flash",
+    "communicate": "qwen3.7-flash",
+    "nl": "qwen3.7-flash"
+  },
+  "budget_cny": "0.70",
+  "max_calls": 2
+}

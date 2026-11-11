@@ -1,0 +1,14 @@
+[
+  {
+    "thinking": true,
+    "preserve_thinking": true,
+    "wire_sha256": "fc25e451fb6cc0007019654178f00278fcb33cd593a21ab59b9b3fcefc3daf7a",
+    "identical": true
+  },
+  {
+    "thinking": false,
+    "preserve_thinking": false,
+    "wire_sha256": "86a411694755ff4d1d09bfa24220f6b6f9e97b65bf6b1db1afd6fa49a8e66944",
+    "identical": true
+  }
+]

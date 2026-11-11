@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+.venv313/
+.python/
+.uv-cache/
+.vendor/
+.legacy/
+.offline-validation/
+*.sqlite3*
+.research-data/
+.env
+.env.*
+!.env.example

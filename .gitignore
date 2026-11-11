@@ -1,0 +1,34 @@
+# History archive: retired projects and a nested Git repository.
+# Kept on disk, intentionally not part of this repository.
+.archive/
+
+# Local WorkBuddy workspace state and memory.
+.workbuddy/
+
+# Large experiment artifacts (~1.1GB): runs, trajectories, frozen snapshots
+# and vendored test copies. Evidence stays on disk and is not versioned here.
+agent-runtime/experiments/
+
+# Python / tooling
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv*/
+.python/
+.uv-cache/
+.vendor/
+.legacy/
+.offline-validation/
+.research-data/
+*.sqlite3*
+
+# Credentials: only the example file is versioned.
+.env
+.env.*
+!.env.example
+
+# OS noise
+.DS_Store
+Thumbs.db

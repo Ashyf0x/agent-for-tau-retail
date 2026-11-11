@@ -1,0 +1,70 @@
+{
+  "language": {
+    "language": "en",
+    "mode": "text",
+    "cross_lingual": false,
+    "pack_revision": "voice-v2-entity-order-v5-schema3-textneutral-voiceclauses",
+    "pack_sha256": "cd14ad9a7aaa298ce54c8c434f2cd1fb55500b13e6fdd1b824d92205a7e4f752",
+    "domain_revision": "voice-v2-frozen50-v1",
+    "tasks_sha256": "2ba1277c495189385f000e1c001a7f775c40c2a768a7146c730ab769b1157690",
+    "metadata_sha256": "2c28ba93593c772a1708c2fa25a654f3a301e1e432914a4fca16377e17150524",
+    "scenario_mode": "pack",
+    "scenario_sha256": "0f173e03eaa245fa9ce9c5b6c177be03910f49f2d93ad661c66a84293d7bb9b0",
+    "localization_map_sha256": null,
+    "localization_revision": null,
+    "runtime_rules_version": "regional-tools-v1",
+    "runtime_rules_sha256": "794587eb3341b18b1e376fb7781488d03af71cd766f048ea6082e9bc3bca3aed",
+    "task_selection": {
+      "task_set_name": "retail",
+      "task_split_name": "base",
+      "task_kwargs": {}
+    },
+    "task_sha256": "666669a478b4d4f224a3b96d0bf3363d2c807cb7a2b3b385e7da2dbb3b139fc2",
+    "canonical_task_id": "26",
+    "agent_greeting": "Hi! How can I help you today?",
+    "agent_language_clause": "Respond in English using Latin script; keep all tool calls, arguments, and structured outputs in English exactly as specified.",
+    "speech_insert_events_per_minute": null,
+    "backchannel_level": null,
+    "backchannel_prompt_version": null,
+    "caller_gender": "female",
+    "persona": {
+      "verbosity": "standard",
+      "interrupt_tendency": null,
+      "persona_id": "priya_patil",
+      "mode": "text",
+      "gender": "female",
+      "locale": "Maharashtra, India",
+      "variety": "English",
+      "language": "en",
+      "display_language": "English",
+      "gender_guidance": "You are a female customer (she/her).",
+      "pragmatics_clauses": [
+        "Short punchy sentences are natural to this variety. You often repeat what you already said to make sure it lands — 'Like I said, the order's been wrong twice now'.",
+        "When you open and get right to it, natural forms are 'Yeah, hi, so here's the problem', 'Okay, I've been waiting forever, I need this fixed today'. In this register you can skip small talk and state the issue immediately.",
+        "When you're not getting somewhere fast, asking for a supervisor or a timeline early is characteristic.",
+        "When you decline or push back, natural realizations are direct — 'No, that doesn't work for me', 'Nope, not doing that', 'That's not what I asked'. In this style the refusal is not softened.",
+        "When frustration builds, you become more insistent — 'Okay, like I literally just told you'. Then a direct ask — 'Can I just talk to someone who can actually fix this'. Even when annoyed your language stays coherent."
+      ],
+      "user_guidelines": "",
+      "mode_guidelines": "",
+      "agent_background_clause": "",
+      "language_directive": null,
+      "spellout_section": "",
+      "voice": null
+    },
+    "spelling_normalization_version": null,
+    "prompt_version": "language-runtime-v8",
+    "guideline_template_version": "language-guidelines-v4",
+    "assignment_version": "canonical-id-sha256-v1"
+  },
+  "communicate_scoring": {
+    "scorer": "semantic",
+    "judge": {
+      "model": "qwen3.7-flash",
+      "model_args": {},
+      "prompt_version": "communicate-semantic-v1"
+    }
+  },
+  "agent_voice": null,
+  "agent_voice_gender": null
+}

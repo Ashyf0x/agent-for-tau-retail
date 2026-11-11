@@ -1,0 +1,5 @@
+# Extra import-time dependencies of the pinned upstream on Python 3.13.
+# These support importing tau2; the offline fixture does not run audio.
+audioop-lts==0.2.2; python_version >= "3.13"
+pydub==0.25.1
+scipy==1.18.1

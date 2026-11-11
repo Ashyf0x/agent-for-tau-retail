@@ -1,0 +1,20 @@
+{
+  "history_files_checked": 8649,
+  "changed_history": [],
+  "changed_source_files": [
+    "research_agent/core/model.py",
+    "evals/decision_snapshots.py",
+    "evals/pilot_calls.py",
+    "evals/pilot_config.py",
+    "evals/retail_pilot.py"
+  ],
+  "core_agent_unchanged": true,
+  "context_memory_tools_official_unchanged": true,
+  "env_metadata_unchanged": true,
+  "env_content_read": false,
+  "real_api_calls": 0,
+  "reserved_task_details_read": false,
+  "business_tools_executed": 0,
+  "benchmark_runs": 0,
+  "commit_or_push": false
+}

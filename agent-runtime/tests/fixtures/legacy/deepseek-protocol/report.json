@@ -1,0 +1,163 @@
+{
+  "status": {
+    "adaptation_implemented": true,
+    "offline_verified": true,
+    "real_endpoint_or_model_availability_verified": false,
+    "real_probe_passed": false,
+    "A_baseline_executed": false,
+    "algorithm_benefit_verified": false,
+    "stopped": true
+  },
+  "model": "deepseek-v4.1-flash-1017",
+  "roles": {
+    "agent": "deepseek-v4.1-flash-1017",
+    "user": "qwen3.7-flash",
+    "nl": "qwen3.7-flash",
+    "communicate": "qwen3.7-flash"
+  },
+  "effective_protocol": {
+    "provider": "bailian_deepseek",
+    "scope": "explicitly reviewed exact model only; no default model/URL override",
+    "enable_thinking": true,
+    "preserve_thinking_wire": "omitted; removal explicitly authorized this turn",
+    "history_reasoning": "replay all existing trusted reasoning_content unchanged, including across user turns; no fabricated greeting reasoning",
+    "max_completion_tokens": 9060,
+    "temperature": 0,
+    "stream": false,
+    "native_tool_calls": true,
+    "native_deepseek_thinking_object_sent": false,
+    "reasoning_effort_or_budget_added": false
+  },
+  "official_static_evidence": [
+    {
+      "url": "https://help.aliyun.com/zh/model-studio/deepseek-api",
+      "supports": "Alibaba endpoint family and thinking response format"
+    },
+    {
+      "url": "https://help.aliyun.com/zh/model-studio/qwen-api-via-openai-chat-completions",
+      "supports": "enable_thinking and output parameter; preserve_thinking support list omits this model; not a measured HTTP rejection"
+    },
+    {
+      "url": "https://help.aliyun.com/zh/model-studio/deepseek-v4-1-flash",
+      "supports": "Exact model snapshot, Beijing, native Function Calling and Chat Completions; busy-hour 2/8 CNY list pricing"
+    }
+  ],
+  "compatibility_limits": [
+    "Actual current .env not read and no API request made; workspace model access remains unknown",
+    "Reasoning fields are locally preserved; server acceptance and actual usage must pass separately authorized probes",
+    "A successful synthetic two-call probe does not prove acceptance or correctness of every Qwen-generated historical prefix",
+    "Absent response reasoning with tools is a local explicit stop rule, not a claim that every server response guarantees nonempty reasoning",
+    "temperature=0 is retained on wire; no assertion about server sampling behavior"
+  ],
+  "production_files_changed": [
+    "research_agent/core/model.py",
+    "evals/pilot_config.py",
+    "evals/pilot_calls.py",
+    "evals/retail_pilot.py",
+    "evals/decision_snapshots.py"
+  ],
+  "unchanged_behavior": [
+    "Agent Core loop",
+    "capacity+legacy Context and effective byte boundary",
+    "Policy/Memory/business tools/simulator/official scoring",
+    "9060 Agent and 2048 other outputs",
+    "relaxed80/24/3 and official60",
+    "zero retries/corrections and write safety",
+    "actual usage settlement and reservation arithmetic"
+  ],
+  "cost_guard_change": "Only reviewed DeepSeek configurations require explicit input/output prices; refuse the Qwen historical defaults. Qwen defaults and serialization retained. No new pricing method.",
+  "validation": {
+    "before_related": {
+      "passed": 55,
+      "xml": ".offline-validation/deepseek-protocol-before-20261106.xml"
+    },
+    "related_after": {
+      "passed": 66,
+      "xml": ".offline-validation/deepseek-protocol-targeted-20261106.xml"
+    },
+    "additional_retail_wiring": {
+      "passed": 1,
+      "xml": ".offline-validation/deepseek-protocol-wiring-20261106.xml"
+    },
+    "final_regression": {
+      "passed": 193,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "seconds": "161.694",
+      "xml": ".offline-validation/deepseek-protocol-regression-20261106.xml"
+    },
+    "mock_protocol_receipt": "protocol-mock/summary.json",
+    "mock_log": "protocol-mock/calls.jsonl",
+    "mock_config": "protocol-mock/config.json",
+    "mock_calls": 2,
+    "mock_input_tokens": 200,
+    "mock_completion_tokens_including_reasoning": 60,
+    "mock_cny": "0.00088",
+    "real_calls": 0,
+    "Qwen_before_after_wire_comparison": "qwen-wire-compatibility.json, two deterministic samples identical",
+    "coverage": [
+      "model-specific route, unchanged other-role models/endpoints/protocol",
+      "thinking enabled, unsupported flag omitted, native tools and full history reasoning replay",
+      "greeting does not fabricate reasoning; missing trusted tool reasoning refuses dispatch",
+      "usage reasoning included only once; malformed/missing-reasoning responses retain known cost settlement",
+      "unknown usage or HTTP rejection keeps reservation and prevents further roles/requests; no retry/fallback",
+      "real Retail bridge with injected HTTP fixture saves adapted config, request SHA and Core correlation",
+      "new six A requests preserve all old message content and definitions, no B/C dispatch or tool execution"
+    ]
+  },
+  "future_plan": {
+    "file": "stages.json",
+    "probe_max_calls": 2,
+    "probe_proposed_budget_cny": "0.70",
+    "A_calls": 6,
+    "A_repetitions": 1,
+    "A_proposed_budget_cny": "2.10",
+    "total_max_calls": 8,
+    "proposed_new_total_cny": "2.80",
+    "combined_worst_reserve_cny": "2.7104",
+    "per_call_worst_reserve_cny": "0.3388",
+    "published_price_input_output_cny_per_million": [
+      "2",
+      "8"
+    ],
+    "approved": false,
+    "stages_order": "probe must pass with complete evidence and authorization before A; stop on failure without a third probe",
+    "A_source": "prepared-A/manifest.json",
+    "rubric": "../retail-decision-study-20261106/evidence-classification.json; evaluation only",
+    "stop_rule": "If historical issues absent and correct controls intact, stop expanding; otherwise report precise errors and wait, never auto-run B/C",
+    "scope": "Qwen historical prefixes with DeepSeek next-decision model, not native DeepSeek full tasks",
+    "simulator_judges_business_tools": 0,
+    "official_score": null,
+    "old_budgets_reused": false
+  },
+  "integrity": {
+    "history_files_checked": 8649,
+    "changed_history": [],
+    "changed_source_files": [
+      "research_agent/core/model.py",
+      "evals/decision_snapshots.py",
+      "evals/pilot_calls.py",
+      "evals/pilot_config.py",
+      "evals/retail_pilot.py"
+    ],
+    "core_agent_unchanged": true,
+    "context_memory_tools_official_unchanged": true,
+    "env_metadata_unchanged": true,
+    "env_content_read": false,
+    "real_api_calls": 0,
+    "reserved_task_details_read": false,
+    "business_tools_executed": 0,
+    "benchmark_runs": 0,
+    "commit_or_push": false
+  },
+  "authorization": {
+    "real_api_calls_this_turn": 0,
+    "actual_API_permission": false,
+    "paid_calls": 0,
+    "benchmark": false,
+    "heldout_details": false,
+    "commit_push": false,
+    "next_action": "stop and await fresh experiment authorization"
+  }
+}

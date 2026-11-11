@@ -1,0 +1,22 @@
+DeepSeek真实协议探针收据（2026-11-06）
+
+本轮新授权：最多2次Agent真实请求，独立估价上限0.70元，仅合成协议探针；6个A组快照须另行授权。本轮2次均已执行并停止，没有第3次请求或自动重试。
+
+实际配置经原resolve_roles从.env公开字段解析，与上一轮冻结角色模型、端点及协议字段一致；认证只由正式_load_key读取。Agent为deepseek-v4.1-flash-1017，enable_thinking=true，9060输出、temperature=0、非流式，不发送preserve_thinking或原生DeepSeek thinking对象。其他角色仍为Qwen但调用数均0；capacity+legacy与relaxed快照不变。
+
+观察结果：
+1. 第一轮使用tool_choice指定protocol_echo，HTTP200，finish_reason=tool_calls，合法单个原生调用，参数value=7。reasoning_content是非空字符串（166字符）。usage输入334、总输出72，其中返回的reasoning_tokens=32；不重复叠加计费。
+2. 第二轮按原文回传真实第一轮reasoning及工具调用，按真实工具ID加入程序生成的fixture结果。fixture附带第一轮请求中不存在的随机校验标签；模型HTTP200、finish_reason=stop，自然回答正确返回7与标签，没有继续请求工具。usage输入461、总输出40。
+3. 第二轮reasoning_content字段存在，类型str，值为空字符串。适配层的“字符串字段”契约已满足；但专用探针额外要求两轮推理都非空，因此执行器在此处按原条件停止，原summary.probe_passed=false保持不变。
+
+严格区分：不是HTTP拒绝、不是usage缺失，也不是工具调用能力被否定。真实工具调用和工具结果消息链路工作，携带历史推理的请求被接受；不能进一步证明服务器如何内部利用reasoning，也不能据空字符串判断思考模式被错误关闭。原因未确定。整体探针未通过既定更严格的非空准入条件，不自动放宽，不修改适配层，不补跑。
+
+费用与证据：
+- 2次实际调用均为Agent；User/NL/COMM=0，Retail业务工具执行=0，A组快照=0，Benchmark=0。
+- 合计输入795、总输出112 Token；供应商usage全已知，未终态调用0，未结预留0。
+- 按授权的保守输入2/输出8元每百万Token估价0.002486元，低于0.70元；未使用缓存/闲时折扣。这是估价，不是账户实际账单。剩余额度不授权其他任务。
+- run/config.json记录实际公开配置、预算、参数、工具选择及源码SHA；run/source-snapshot保存实际执行源码；run/calls.jsonl保存派发意图、请求/响应SHA、原始HTTP正文、解析响应、调用关联和结算；run/summary.json保留原始停止状态。
+- receipt.json是停止后的只读补充收据，核对两次request/HTTP/response/settlement关联、历史推理和tool ID原样回传、随机标签命中、成本与预留。没有重写原账本或summary。
+- 原8649个实验文件hash不变、运行源码冻结hash及源码快照匹配，.env没有修改或输出认证信息。没有访问预留详情、提交或推送。
+
+下一步：先由用户决定最终自然回答的空reasoning字符串是否仍应阻断探针准入；本轮没有改变该条件。无论如何，6个A组快照仍需单独授权，未执行。它们仍是Qwen历史前缀上的DeepSeek决策快照，不能替代原生DeepSeek完整任务Baseline。

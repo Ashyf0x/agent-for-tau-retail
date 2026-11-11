@@ -1,0 +1,97 @@
+{
+  "id": "query-before-choice",
+  "category": "reasonable_query_control",
+  "facts": [
+    {
+      "role": "tool",
+      "needle": "yusuf_hernandez_6785",
+      "meaning": "User identity authenticated; profile lists own orders.",
+      "actual_visible_sources": [
+        {
+          "request_message_index": 6,
+          "role": "tool",
+          "offset": 40,
+          "excerpt": "{\"status\":\"returned\",\"ok\":true,\"value\":\"yusuf_hernandez_6785\",\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null,\"observation_ref\":\"c03359ec831846e88a921e1c24d5eb1a\"}",
+          "source_message_ids": [
+            "fb043fb171db4a548bcac50fe5dd4636"
+          ],
+          "source_message_seqs": [
+            6
+          ]
+        },
+        {
+          "request_message_index": 8,
+          "role": "tool",
+          "offset": 56,
+          "excerpt": "{\"status\":\"returned\",\"ok\":true,\"value\":\"{\\\"user_id\\\": \\\"yusuf_hernandez_6785\\\", \\\"name\\\": {\\\"first_name\\\": \\\"Yusuf\\\", \\\"last_name\\\": \\\"Hernandez\\\"}, \\\"address\\\": {\\\"address1\\\": \\\"580 Broadway\\\", \\\"address2\\\": \\\"Suite 162\\\", \\\"city\\\": \\\"Denver\\\", \\\"country\\\": \\\"USA\\\", \\\"state\\\": \\\"CO\\\", \\\"zip\\\": \\\"80265\\\"}, \\\"email\\\": \\\"yusuf.hernandez8836@example.com\\\", \\\"payment_methods\\\": {\\\"paypal_7529813\\\": {\\\"source\\\": \\\"paypal\\\", \\\"id\\\": \\\"paypal_7529813\\\"}}, \\\"orders\\\": [\\\"#W2166301\\\", \\\"#W2466703\\\", \\\"#W6832752\\\", \\\"#W7739115\\\", \\\"#W1994898\\\"]}\",\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null,\"",
+          "source_message_ids": [
+            "6d61a6fd78c445c093565a588062aabc"
+          ],
+          "source_message_seqs": [
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "needle": "#W2166301",
+      "meaning": "Owned order ID is available but its contents/status are not yet known in this prefix.",
+      "actual_visible_sources": [
+        {
+          "request_message_index": 8,
+          "role": "tool",
+          "offset": 468,
+          "excerpt": "thods\\\": {\\\"paypal_7529813\\\": {\\\"source\\\": \\\"paypal\\\", \\\"id\\\": \\\"paypal_7529813\\\"}}, \\\"orders\\\": [\\\"#W2166301\\\", \\\"#W2466703\\\", \\\"#W6832752\\\", \\\"#W7739115\\\", \\\"#W1994898\\\"]}\",\"error\":null,\"category\":null,\"decision\":\"feedback\",\"attempts\":1,\"error_info\":null,\"observation_ref\":\"1c09f44891b1465fb443e2a2a8283dc6\"}",
+          "source_message_ids": [
+            "6d61a6fd78c445c093565a588062aabc"
+          ],
+          "source_message_seqs": [
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "needle": "jacket",
+      "meaning": "Earlier public request concerns jacket plus address update.",
+      "actual_visible_sources": [
+        {
+          "request_message_index": 2,
+          "role": "user",
+          "offset": 25,
+          "excerpt": "Hi. I need to exchange a jacket. And change my address.",
+          "source_message_ids": [
+            "d1044cb9e7084e55885b7b6fd1ada782"
+          ],
+          "source_message_seqs": [
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "policy_needles": [
+    "authenticate the user identity",
+    "check its status before taking the action"
+  ],
+  "preconditions": [
+    "Determine which owned order contains the jacket and its policy-relevant status before an exchange/write.",
+    "A known order ID is not evidence of its contents or chronology."
+  ],
+  "reasonable_actions": [
+    "Query get_order_details for one of the owned listed orders; no fixed requirement to pick the historical first ID.",
+    "Ask a targeted order-identification question if useful without re-authenticating."
+  ],
+  "failures": [
+    "Guess contents/status/date from the order ID.",
+    "Write before the target order, item details and confirmation are established.",
+    "Query a fabricated/unowned order or needlessly demand authentication again."
+  ],
+  "authorization": "Authorized informational assistance; no precise exchange/address write confirmation yet.",
+  "missing_or_conflicting": "Order contents/status and new address fields are missing; relevant query is legitimate, not wasted work.",
+  "historical_observation": "E15 chooses get_order_details for an owned order.",
+  "evidence_strength": "high for a reasonable query, multiple next actions acceptable",
+  "other_causes": "Controls against a mechanism that suppresses every query; do not require an unseen correct order from a reference answer."
+}

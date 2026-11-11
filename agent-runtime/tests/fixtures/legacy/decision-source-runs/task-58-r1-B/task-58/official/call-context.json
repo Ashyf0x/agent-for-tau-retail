@@ -1,0 +1,71 @@
+{
+  "language": {
+    "language": "en",
+    "mode": "text",
+    "cross_lingual": false,
+    "pack_revision": "voice-v2-entity-order-v5-schema3-textneutral-voiceclauses",
+    "pack_sha256": "cd14ad9a7aaa298ce54c8c434f2cd1fb55500b13e6fdd1b824d92205a7e4f752",
+    "domain_revision": "voice-v2-frozen50-v1",
+    "tasks_sha256": "2ba1277c495189385f000e1c001a7f775c40c2a768a7146c730ab769b1157690",
+    "metadata_sha256": "2c28ba93593c772a1708c2fa25a654f3a301e1e432914a4fca16377e17150524",
+    "scenario_mode": "pack",
+    "scenario_sha256": "0f173e03eaa245fa9ce9c5b6c177be03910f49f2d93ad661c66a84293d7bb9b0",
+    "localization_map_sha256": null,
+    "localization_revision": null,
+    "runtime_rules_version": "regional-tools-v1",
+    "runtime_rules_sha256": "794587eb3341b18b1e376fb7781488d03af71cd766f048ea6082e9bc3bca3aed",
+    "task_selection": {
+      "task_set_name": "retail",
+      "task_split_name": "base",
+      "task_kwargs": {}
+    },
+    "task_sha256": "a7c53f3410cb25cd717482d06dcfb8aaa2651e7b3d32e04a3d534de4c36a0f38",
+    "canonical_task_id": "58",
+    "agent_greeting": "Hi! How can I help you today?",
+    "agent_language_clause": "Respond in English using Latin script; keep all tool calls, arguments, and structured outputs in English exactly as specified.",
+    "speech_insert_events_per_minute": null,
+    "backchannel_level": null,
+    "backchannel_prompt_version": null,
+    "caller_gender": "male",
+    "persona": {
+      "verbosity": "standard",
+      "interrupt_tendency": null,
+      "persona_id": "mamadou_diallo",
+      "mode": "text",
+      "gender": "male",
+      "locale": "Senegal",
+      "variety": "English",
+      "language": "en",
+      "display_language": "English",
+      "gender_guidance": "You are a male customer (he/him).",
+      "pragmatics_clauses": [
+        "Your register is mildly informal: short sentences, plain words, and small conversational fillers woven in naturally — 'yeah', 'sure', 'let me see here', 'okay so', 'no worries'.",
+        "When you open in a relaxed way, natural forms are 'Hi there', 'Hey, how's it going', or straight into it — 'Yeah, hi, I'm contacting you about an order I placed'.",
+        "When you are cooperative and unhurried, that surfaces as working the problem with the agent rather than against them and assuming good faith. If you're asked to wait and you're fine with it, natural forms are — 'Yeah, no problem, take your time', 'Sure, I'll hang on'.",
+        "When you disagree or need to decline, you do it gently and reasonably: 'Hmm, yeah, I don't think that's gonna work for me', 'Let me think about that one', 'Honestly I'd rather not do that if there's another way'. You give a reason rather than a flat 'no'.",
+        "When frustration rises, it stays mild. First you become more deliberate — 'Okay... hm, let me see here'. If it really drags, you get a touch firmer but not rude — 'Yeah, I get that, but this is the third time I've explained it'.",
+        "When the conversation wraps up cordially, closings run: 'Alright, that's great, thanks a lot', 'Okay, sounds good, appreciate it', 'Take care, bye now'. A wrap-up, then you end the conversation."
+      ],
+      "user_guidelines": "",
+      "mode_guidelines": "",
+      "agent_background_clause": "",
+      "language_directive": null,
+      "spellout_section": "",
+      "voice": null
+    },
+    "spelling_normalization_version": null,
+    "prompt_version": "language-runtime-v8",
+    "guideline_template_version": "language-guidelines-v4",
+    "assignment_version": "canonical-id-sha256-v1"
+  },
+  "communicate_scoring": {
+    "scorer": "semantic",
+    "judge": {
+      "model": "qwen3.7-flash",
+      "model_args": {},
+      "prompt_version": "communicate-semantic-v1"
+    }
+  },
+  "agent_voice": null,
+  "agent_voice_gender": null
+}

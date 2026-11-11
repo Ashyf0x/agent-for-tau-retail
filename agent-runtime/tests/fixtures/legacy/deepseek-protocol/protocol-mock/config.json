@@ -1,0 +1,68 @@
+{
+  "kind": "offline_protocol_fixture_not_real_calls",
+  "roles": {
+    "agent": {
+      "model": "deepseek-v4.1-flash-1017",
+      "base_url": "https://ws-nn3ehvxn6iggxh19.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "provider": "bailian_deepseek",
+      "thinking": true,
+      "preserve_thinking": false,
+      "temperature": 0,
+      "provider_seed": null,
+      "model_source": "explicit --agent-model",
+      "base_url_source": "AGENT_BASE_URL"
+    },
+    "user": {
+      "model": "qwen3.7-flash",
+      "base_url": "https://ws-nn3ehvxn6iggxh19.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "provider": "qwen",
+      "thinking": false,
+      "preserve_thinking": false,
+      "temperature": 0,
+      "provider_seed": 42,
+      "model_source": "AGENT_MODEL",
+      "base_url_source": "AGENT_BASE_URL"
+    },
+    "communicate": {
+      "model": "qwen3.7-flash",
+      "base_url": "https://ws-nn3ehvxn6iggxh19.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "provider": "qwen",
+      "thinking": false,
+      "preserve_thinking": false,
+      "temperature": 0,
+      "provider_seed": null,
+      "model_source": "AGENT_MODEL",
+      "base_url_source": "AGENT_BASE_URL"
+    },
+    "nl": {
+      "model": "qwen3.7-flash",
+      "base_url": "https://ws-nn3ehvxn6iggxh19.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "provider": "qwen",
+      "thinking": false,
+      "preserve_thinking": false,
+      "temperature": 0,
+      "provider_seed": null,
+      "model_source": "AGENT_MODEL",
+      "base_url_source": "AGENT_BASE_URL"
+    }
+  },
+  "resources": {
+    "profile": "relaxed",
+    "max_calls_per_task": 80,
+    "core_max_steps": 24,
+    "task_budget_cny": "3.00"
+  },
+  "budget_cny": "0.70",
+  "limits": {
+    "max_calls": 2,
+    "max_request_bytes": 131072,
+    "input_token_proxy_ceiling": 133120,
+    "max_output_tokens": 2048,
+    "agent_max_output_tokens": 9060
+  },
+  "price_assumption": {
+    "input_cny_per_million": "2",
+    "output_cny_per_million": "8"
+  },
+  "real_calls_authorized": false
+}

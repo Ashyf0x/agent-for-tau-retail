@@ -1,0 +1,149 @@
+{
+  "status": {
+    "configuration_candidate_complete": true,
+    "interface_offline_checked": true,
+    "actual_model_available_verified": false,
+    "algorithm_benefit_verified": false,
+    "execution_started": false,
+    "stopped": true
+  },
+  "files": {
+    "configuration": "candidate.json",
+    "public_role_routes_and_input_sources": "prepared/manifest.json",
+    "offline_preparer": "evals/decision_snapshots.py",
+    "tests": "tests/test_decision_snapshots.py",
+    "protocol": "protocol-review.json",
+    "evidence": "evidence-classification.json",
+    "mechanism_and_plan": "proposal.txt",
+    "transfer_chain": "transfer-diagnosis.json",
+    "review_freeze": "method-freeze-for-review.json"
+  },
+  "route": {
+    "agent": "deepseek-v4.1-flash-1017",
+    "user": "qwen3.7-flash",
+    "communicate": "qwen3.7-flash",
+    "nl": "qwen3.7-flash"
+  },
+  "configuration_path": "Existing --agent-model only; no real .env read/edit, no default model or endpoint replacement. Snapshot metadata is historical public configuration, not proof of current live .env.",
+  "resource_profile": {
+    "profile": "relaxed",
+    "max_calls_per_task": 80,
+    "core_max_steps": 24,
+    "task_budget_cny": "3.00"
+  },
+  "context": {
+    "policy": "capacity",
+    "compaction": "legacy",
+    "byte_margin": 2048,
+    "handoff_max_bytes": 16384
+  },
+  "api_blockers": [
+    "preserve_thinking=true not listed as supported for target DeepSeek by official Alibaba documentation; keep parameter, no silent fallback",
+    "Actual workspace model activation/permission unknown",
+    "New rate pair and proposed new total budget not yet approved"
+  ],
+  "snapshot_scope": {
+    "decisions": 6,
+    "independent_tasks": 6,
+    "inputs_prepared": 18,
+    "historical_requests_verified_by_dispatch_and_core_sha": 6,
+    "repetitions_per_arm": 2,
+    "proposed_agent_calls": 36,
+    "optional_protocol_probe_calls": 2,
+    "simulator_judge_or_business_tool_calls": 0,
+    "scoring": "Blind local manual review of visible evidence; not official reward, independent human gold or a fresh full-task DeepSeek baseline"
+  },
+  "evidence_categories": [
+    {
+      "type": "known-precondition",
+      "source": "105/r1/B E32->33",
+      "strength": "high for infeasible proposal; no exchange dispatched",
+      "independent_tasks": 1,
+      "prior_audit": "6 events in 5 sessions, one task"
+    },
+    {
+      "type": "claim-exceeds-evidence",
+      "source": "58/r1/B E63->64",
+      "strength": "medium evidence gap; request acceptance does not establish settlement",
+      "independent_tasks": 1,
+      "prior_audit": "6 sessions, one task"
+    },
+    {
+      "type": "visible-fact-association",
+      "source": "65/r1/B E43->44",
+      "strength": "high for No->Yes attribute mismatch; internal cause unknown",
+      "independent_tasks": 1,
+      "prior_audit": "one known event/session, one task"
+    }
+  ],
+  "controls": [
+    "26/r1/B E47 authorized return",
+    "86/r1/B E14 reasonable owned-order query",
+    "22/r1/B E20 targeted address clarification"
+  ],
+  "interventions": {
+    "A": "New DeepSeek next-decision baseline, no extra guidance",
+    "B": "136-word fixed policy reminder",
+    "C": "136-word fixed internal precondition/evidence check, no output JSON or extra model call",
+    "only_shared_input_changes": "model name and original run_state.limit 12->24; all other historical message content, tools and reasoning preserved",
+    "max_prepared_request_bytes": 63594,
+    "effective_boundary_bytes": 129024
+  },
+  "cost_proposal": {
+    "per_call_reserve_cny": "0.3388",
+    "decision_worst_reserve_cny": "12.1968",
+    "probe_worst_reserve_cny": "0.6776",
+    "combined_worst_reserve_cny": "12.8744",
+    "approved": false,
+    "basis": "Proposed Beijing busy-hour uncached list rates, not Qwen historical prices or actual bill",
+    "decision_budget_cny": "13.00",
+    "optional_probe_budget_cny": "0.70",
+    "combined_new_budget_cny": "13.70",
+    "price_source": "https://help.aliyun.com/zh/model-studio/deepseek-v4-1-flash",
+    "price_input_output_cny_per_million": [
+      "2",
+      "8"
+    ],
+    "prior_12_cny_reused": false,
+    "price_method_changed": false,
+    "not_actual_account_bill": true
+  },
+  "transfer_diagnosis": "In both selected abnormal chains the exact Agent transfer notice reached the simulator under an explicit TRANSFER instruction, but waiting text returned. Positive comparator returned TRANSFER and stopped. No returned marker loss demonstrated; no official/bridge/score changes.",
+  "validation": {
+    "before_related": {
+      "passed": 48,
+      "seconds": 55.45,
+      "xml": ".offline-validation/decision-study-before-20261106.xml"
+    },
+    "new_targeted": {
+      "passed": 7,
+      "seconds": 10.31,
+      "xml": ".offline-validation/decision-study-targeted-20261106.xml"
+    },
+    "final_regression": {
+      "passed": 181,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": "143.201",
+      "xml": ".offline-validation/decision-study-regression-20261106.xml",
+      "command": ".venv313/Scripts/python.exe -m pytest -q --basetemp .offline-validation/decision-study-regression-20261106 --junitxml .offline-validation/decision-study-regression-20261106.xml"
+    }
+  },
+  "integrity": {
+    "historical_files_checked": 8592,
+    "changed_historical_files": [],
+    "previous_runtime_files_checked": 30,
+    "changed_previous_runtime_files": [],
+    "new_offline_preparer": "evals/decision_snapshots.py",
+    "env_metadata_unchanged": true,
+    "env_content_read": false,
+    "paid_or_actual_api_calls": 0,
+    "benchmark_runs": 0,
+    "business_tools_executed": 0,
+    "reserved_task_details_read": false,
+    "commit_or_push": false
+  },
+  "continue_gate": "After compatibility/access/rate resolution and fresh authorization, begin only a small fixed-decision study. Continue only for repeated correction on at least two types/tasks versus both A and B, with no control degradation or new unsupported claims/authorization errors. Stop if A already handles all points, B~C, unstable effect, overblocking, or any evidence/usage/protocol/budget issue.",
+  "later_full_baseline": "New DeepSeek A and optimized variants must share relaxed and capacity+legacy. Preserve old Qwen results. Only after reviewed method freeze and new authorization consider heldout tau2 v2.0 single-evaluation pairing; no Pass4."
+}

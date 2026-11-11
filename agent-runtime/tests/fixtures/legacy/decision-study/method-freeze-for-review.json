@@ -1,0 +1,15 @@
+{
+  "sha256": {
+    "evals/decision_snapshots.py": "dee3d538f8309c3093e019de480e3ce38aa5d9b0a0e2781fb9b2fa4a06659113",
+    "tests/test_decision_snapshots.py": "31c0b668fbaeac8204373b95ab93e21dcea8a297edfbac0fa80d154c2ff6bc4e",
+    "experiments/retail-decision-study-20261106/candidate.json": "24beab571067a0852c8033c3b42bc7b90e2e06bfcd1b15b412abee9f0e4587c2",
+    "experiments/retail-decision-study-20261106/policy-reminder.txt": "2d2776dc3e8d5581eacb0cc269b6f99b637e80e18af3d793d74aa6292bf345d4",
+    "experiments/retail-decision-study-20261106/precondition-check.txt": "ddee0942971a32db4c654fadf4db9c1c3663067a6d0bf9f7a6f71a91fdbb505f",
+    "experiments/retail-decision-study-20261106/rubrics.json": "d228567f23b275ff7294a84946672559ff770bd622352ccc54c0987589fc06b9",
+    "experiments/retail-decision-study-20261106/protocol-review.json": "7e8a978ee573f2db67e67ef7ec937c5874bac192a3819011a404ca0afeaecb42"
+  },
+  "frozen_for_review_only": true,
+  "authorized_for_execution": false,
+  "historical_input_limitation": "Qwen prefixes with original reasoning; this is not a fresh DeepSeek full-task baseline",
+  "next_comparison": "new DeepSeek A versus new DeepSeek B/C, all relaxed/capacity+legacy; heldout stays isolated until method freeze and new authorization"
+}

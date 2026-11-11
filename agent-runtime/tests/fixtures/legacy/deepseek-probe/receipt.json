@@ -1,0 +1,115 @@
+{
+  "kind": "read_only_real_probe_receipt",
+  "authorization": {
+    "max_real_calls": 2,
+    "budget_cny": "0.70",
+    "scope": "synthetic protocol probe only",
+    "basis": "Current user: 可以开始真实协议探针了; A snapshots require separate later authorization",
+    "A_authorized": false
+  },
+  "result": {
+    "calls": 2,
+    "HTTP_statuses": [
+      200,
+      200
+    ],
+    "model_reports": [
+      "deepseek-v4.1-flash-1017",
+      "deepseek-v4.1-flash-1017"
+    ],
+    "native_tool_call_and_args_valid": true,
+    "forced_named_function_accepted": true,
+    "first_reasoning_nonempty_chars": 166,
+    "second_reasoning_field_present": true,
+    "second_reasoning_type": "str",
+    "second_reasoning_chars": 0,
+    "actual_reasoning_replayed_unchanged": true,
+    "tool_result_ID_association_valid": true,
+    "fresh_fixture_tag_correctly_returned": true,
+    "known_usage_both": true,
+    "base_adapter_string_field_contract_satisfied_both": true,
+    "stricter_probe_nonempty_reasoning_gate_satisfied": false,
+    "original_runner_probe_passed": false,
+    "A_executed": 0
+  },
+  "interpretation": "Both native tool calling and follow-up fixture-result reading worked. The final reply has a present but empty-string reasoning_content. HTTPModelClient accepts a string, so its parsing contract passed; the dedicated probe additionally required nonempty reasoning in both replies and stopped. This is not missing usage, an HTTP rejection, or evidence DeepSeek lacks tool support. No check was relaxed and the original stopped summary is unchanged.",
+  "usage": {
+    "input_tokens": 795,
+    "completion_tokens_including_reasoning": 112,
+    "per_call": [
+      {
+        "prompt_tokens": 334,
+        "total_tokens": 406,
+        "completion_tokens": 72,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "image_tokens": 0,
+          "text_tokens": 334
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 32,
+          "text_tokens": 39
+        }
+      },
+      {
+        "prompt_tokens": 461,
+        "total_tokens": 501,
+        "completion_tokens": 40,
+        "prompt_tokens_details": {
+          "cached_tokens": 256,
+          "image_tokens": 0,
+          "text_tokens": 461
+        },
+        "completion_tokens_details": {
+          "text_tokens": 39
+        }
+      }
+    ],
+    "reasoning_tokens_not_added_again": true
+  },
+  "cost": {
+    "estimate_cny": "0.002486",
+    "unresolved_reservation_cny": "0",
+    "price_input_output_cny_per_million": [
+      "2",
+      "8"
+    ],
+    "budget_cny": "0.70",
+    "cost_complete": true,
+    "price_basis": "Approved conservative busy-hour uncached estimate; no cache/off-peak discounts applied, not actual account bill"
+  },
+  "artifacts": {
+    "config_sha256": "adb7ce499449c6796840452f23760981b26ba7879b34d4583c00ff0b57795359",
+    "calls_sha256": "e86f50af05ef28dd2c9944e967b22ed3673013ca0cb93706324cba66535e21cd",
+    "raw_response_sha256": [
+      "b406c0718f7a35a6d63a682088ef6a0eecf5d411085b7263325c635c66ec15ec",
+      "accb0e2dfa40e54a02076ce1234807d793baa4a73388df7109009c680fa859ab"
+    ],
+    "call_ids": [
+      "cde69117c3264079a5b1b44088974587",
+      "d34ff83b655f441e851f19ea54c4a8cb"
+    ],
+    "source_snapshot": "run/source-snapshot",
+    "original_summary": "run/summary.json"
+  },
+  "integrity": {
+    "frozen_runtime_unchanged": true,
+    "source_snapshot_hashes_verified": true,
+    "prior_history_files_checked": 8649,
+    "prior_history_changed": [],
+    "env_metadata_matches_previous_record": true,
+    "env_modified": false,
+    "key_read": "formal smoke._load_key only; no key copied or output",
+    "public_role_config": "formal resolve_roles, matches prior model/endpoints/protocol fields"
+  },
+  "stopped": true,
+  "retry_or_third_call": false,
+  "automatic_protocol_change": false,
+  "Core_Context_or_prompt_change": false,
+  "business_tool_execution": false,
+  "user_NL_COMM_calls": 0,
+  "reserved_task_details_accessed": false,
+  "Benchmark_or_A_B_C_execution": false,
+  "commit_or_push": false,
+  "next_step": "Review whether an empty final reasoning string should remain a blocking probe gate. This requires an explicit decision; no relaxation or new call performed. A requires separate authorization regardless. Qwen historical prefixes remain a separate limitation."
+}

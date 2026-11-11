@@ -1,0 +1,49 @@
+{
+  "mode": "authorized_real_pilot",
+  "finished_tasks": [
+    {
+      "task_id": "58",
+      "reward": 1.0,
+      "termination_reason": "user_stop"
+    }
+  ],
+  "calls": 21,
+  "estimated_cny": "0.2309244",
+  "unresolved_reservation_cny": "0",
+  "stopped": false,
+  "all_tasks_finished": true,
+  "official_score": null,
+  "note": "Fixture scores are wiring only; small real Pilot is not a baseline",
+  "per_role": {
+    "agent": {
+      "calls": 15,
+      "input_tokens": 155595,
+      "output_tokens": 5520,
+      "unknown_usage": 0
+    },
+    "user": {
+      "calls": 6,
+      "input_tokens": 12254,
+      "output_tokens": 627,
+      "unknown_usage": 0
+    },
+    "communicate": {
+      "calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "unknown_usage": 0
+    },
+    "nl": {
+      "calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "unknown_usage": 0
+    }
+  },
+  "unknown_usage_call_ids": [],
+  "unterminated_call_ids": [],
+  "incomplete_last_line": false,
+  "cost_complete": true,
+  "absolute_bill_guaranteed": false,
+  "stop_reason": null
+}
