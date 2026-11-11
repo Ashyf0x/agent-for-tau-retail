@@ -2,7 +2,7 @@
 
 面向 Agent 算法学习与实习申请的轻量 Python 单 Agent 项目。重点是可靠执行、公开评测与失败轨迹分析；通用核心不包含 Retail 业务逻辑，不提供完整 Multi-Agent 调度。
 
-当前状态（2026-11-10 收尾）：官方 `retail_50` 子集的 **50 任务 × 3 trial = 150 trial** 全量评测已完成，150/150 达评分；pass^1 = 76.7%（115/150，Wilson 95% 69.3–82.7）、pass^3 = 50.0%（25/50）、23 个 flaky 任务，总调用 2937 次、成本 41.77 元。正式报告与失败归因见 [run-50x3.md](experiments/retail-qwen-tier-order-20261108/run-50x3.md)，证据索引见 [experiments/README.md](experiments/README.md)。所有真实调用已停止，不因失败自动补跑；无横向 baseline，不宣称优于公开成绩。
+当前状态（2026-11-10 收尾）：官方 `retail_50` 子集的 **50 任务 × 3 trial = 150 trial** 全量评测已完成，150/150 达评分；pass^1 = 76.7%（115/150，Wilson 95% 69.3–82.7）、pass^3 = 50.0%（25/50）、23 个 flaky 任务，总调用 2937 次、成本 41.77 元。正式报告与失败归因见 [run-50x3.md](experiments/retail-qwen-tier-order-20261108/run-50x3.md)，所有真实调用已停止，不因失败自动补跑；无横向 baseline。
 
 开发规则见 [根目录 AGENTS.md](../AGENTS.md)，当前设计见 [ARCHITECTURE.md](ARCHITECTURE.md)，目录导航见 [工作区 README](../README.md)。
 
